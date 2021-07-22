@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Cinemachine;
 
 public class BallHandler : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class BallHandler : MonoBehaviour
     [SerializeField] float detachBallDelay = 1f;
     [SerializeField] float spawnDelay = 1f;
     [SerializeField] float destroyDelay;
-    
+
     // states
     bool isDragging;
     
@@ -20,6 +21,7 @@ public class BallHandler : MonoBehaviour
     Rigidbody2D _currentBallRb;
     SpringJoint2D _currentBallSj;
     GameObject _ballInstance;
+    
     
     private void Start()
     {
@@ -100,7 +102,8 @@ public class BallHandler : MonoBehaviour
         if (_ballInstance == null)
         {
             _ballInstance = Instantiate(ballPrefab, pivotPoint.position, Quaternion.identity);
-        
+
+
             // sets the rb to be equal to that of the instantiated ball's rb.
             _currentBallRb = _ballInstance.GetComponent<Rigidbody2D>();
             _currentBallSj = _ballInstance.GetComponent<SpringJoint2D>();
@@ -118,5 +121,6 @@ public class BallHandler : MonoBehaviour
         Destroy(_ballInstance);
         
     }
+    
  
 }
