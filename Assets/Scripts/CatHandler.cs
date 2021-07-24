@@ -5,34 +5,33 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using Cinemachine;
 
-public class BallHandler : MonoBehaviour
+public class CatHandler : MonoBehaviour
 {
     // Configs
-    [SerializeField] GameObject ballPrefab;
+    [SerializeField] GameObject catPrefab;
     [SerializeField] Rigidbody2D pivotPoint;
     [SerializeField] float detachBallDelay = 1f;
     [SerializeField] float spawnDelay = 1f;
-    [SerializeField] float destroyDelay;
+    // [SerializeField] float destroyDelay;
 
     // states
     bool isDragging;
-    
+
     // Cache
     Rigidbody2D _currentBallRb;
     SpringJoint2D _currentBallSj;
-    GameObject _ballInstance;
-    
-    
+    GameObject _catInstance;
+
     private void Start()
     {
-        RespawnBall();
+        RespawnCat();
     }
 
     void Update()
     {
         TouchControl();
     }
-
+    
 
     private void TouchControl()
     {
@@ -44,11 +43,11 @@ public class BallHandler : MonoBehaviour
         {
             if (isDragging)
             {
-                LauchBall();
+                LauchCat();
             }
             
             // Hides the AimIndicator when we're not touching the screen
-            _ballInstance.GetComponent<LineRenderer>().enabled = false;
+            _catInstance.GetComponent<LineRenderer>().enabled = false;
             isDragging = false;
             return;
         }
@@ -56,7 +55,7 @@ public class BallHandler : MonoBehaviour
         isDragging = true;
         
         // Shows the AimIndicator when touching the screen
-        _ballInstance.GetComponent<LineRenderer>().enabled = true;
+        _catInstance.GetComponent<LineRenderer>().enabled = true;
         
         // Reads the touch position on the screen
         var touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
@@ -72,7 +71,7 @@ public class BallHandler : MonoBehaviour
     }
     
     
-    private void LauchBall()
+    private void LauchCat()
     {
         // sets the _currentBallRb rb back to Dynamic
         _currentBallRb.isKinematic = false;
@@ -81,46 +80,44 @@ public class BallHandler : MonoBehaviour
         _currentBallRb = null;
         
         // detaches the ball after a delay
-        Invoke(nameof(DetachBall), detachBallDelay);
+        Invoke(nameof(DetachCat), detachBallDelay);
         
-        StartCoroutine(DestroyBall());
+        // StartCoroutine(DestroyCat());
     }
 
-    private void DetachBall()
+    private void DetachCat()
     {
         // deactivate the currentBallSpringJoint to launch the ball once we're not touching the screen
         _currentBallSj.enabled = false;
         _currentBallSj = null;
         
         // spawns the ball after it launches; after a delay
-        Invoke(nameof(RespawnBall), spawnDelay);
+        Invoke(nameof(RespawnCat), spawnDelay);
         
     }
 
-    private void RespawnBall()
+    private void RespawnCat()
     {
-        if (_ballInstance == null)
-        {
-            _ballInstance = Instantiate(ballPrefab, pivotPoint.position, Quaternion.identity);
+        _catInstance = Instantiate(catPrefab, pivotPoint.position, Quaternion.identity);
 
 
-            // sets the rb to be equal to that of the instantiated ball's rb.
-            _currentBallRb = _ballInstance.GetComponent<Rigidbody2D>();
-            _currentBallSj = _ballInstance.GetComponent<SpringJoint2D>();
+        // sets the rb to be equal to that of the instantiated ball's rb.
+        _currentBallRb = _catInstance.GetComponent<Rigidbody2D>();
+        _currentBallSj = _catInstance.GetComponent<SpringJoint2D>();
         
-            // this line will attach the ball to the pivot
-            _currentBallSj.connectedBody = pivotPoint;
-        }
+        // this line will attach the ball to the pivot
+        _currentBallSj.connectedBody = pivotPoint;
         
     }
+    
 
     // destroys the instantiated ball after a delay
-    IEnumerator DestroyBall()
-    {
-        yield return new WaitForSeconds(destroyDelay);
-        Destroy(_ballInstance);
-        
-    }
+    // IEnumerator DestroyCat()
+    // {
+    //     yield return new WaitForSeconds(destroyDelay);
+    //     Destroy(_ballInstance);
+    //     
+    // }
     
  
 }
