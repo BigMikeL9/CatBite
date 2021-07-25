@@ -22,12 +22,15 @@ public class Cat : MonoBehaviour
    Transform _nearestEnemy;
    Enemy[] _enemies;
    Rigidbody2D _rigidbody2D;
+   float distance;
+   PolygonCollider2D _polygonCollider2D;
 
    private void Start()
    {
       _lineRenderer = GetComponent<LineRenderer>();
       _rigidbody2D = GetComponent<Rigidbody2D>();
-      
+      _polygonCollider2D = GetComponent<PolygonCollider2D>();
+
       _gameSession = FindObjectOfType<GameSession>();
       _enemies = FindObjectsOfType<Enemy>();
 
@@ -74,7 +77,7 @@ public class Cat : MonoBehaviour
          if (enemy != null)
          {
             // gets the distance between cat and enemy
-            float distance = Vector3.Distance(transform.position, enemy.transform.position);
+            distance = Vector3.Distance(transform.position, enemy.transform.position);
             // if the distance between them is smaller than ... (minDistanceToClosestEnemy)
             if (distance < minDistanceToClosestEnemy)
             {
@@ -91,6 +94,10 @@ public class Cat : MonoBehaviour
          
       }
 
+      bool isTouchingLayers = _polygonCollider2D.IsTouchingLayers(LayerMask.GetMask("Chicken"));
+      // if cat and chicken are touching --> then dont continue with the rest of the code
+      if (isTouchingLayers) { return; } // ****************** FIX THISSS TOMORRROWW ***************
+      
       if (_nearestEnemy != null)
       {
          // Move cat toward chicken when "minDistanceToMoveToward" is reached
@@ -99,16 +106,23 @@ public class Cat : MonoBehaviour
          isMoving = true;
 
          // Debug.Log("Closest enemy is: " + _nearestEnemy + ". Distance is: " + minDistanceToClosestEnemy);
-         // Debug.DrawLine(transform.position, _nearestEnemy.position, Color.red);
+         Debug.DrawLine(transform.position, _nearestEnemy.position, Color.red);
       }
-      
    }
 
    private void FlipSprite()
    {
-      if (isMoving)
+      if (isMoving && _nearestEnemy != null)
       {
-         transform.localScale = new Vector2(Mathf.Sign(_rigidbody2D.velocity.x), 1f);
+         // gets the position of the cat in local space, relative to the closest enemy
+         Vector3 relativePoint = transform.InverseTransformPoint(_nearestEnemy.transform.position);
+         
+         // if relativePoint is negative --> then that means that enemy is behind cat
+         if (relativePoint.x < 0)
+         {
+            // thus flip the sprite
+            transform.localScale = new Vector3(Mathf.Sign(relativePoint.x), 1f);
+         }
       }
    }
 

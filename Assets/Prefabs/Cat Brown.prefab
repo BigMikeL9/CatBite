@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 5114346762593474899}
   - component: {fileID: 5114346762593474908}
   - component: {fileID: 5114346762593474903}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Cat Brown
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5114346762593474911}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -14.12, y: -3.11, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -292,9 +292,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58b34418de5c49f4fb6344624af6d824, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyValue: 100
-  _minDistanceToAttack: 20
-  _speed: 30
+  enemyValue: 100
+  minDistanceToMoveToward: 5
+  speed: 1
 --- !u!95 &5114346762593474903
 Animator:
   serializedVersion: 3
