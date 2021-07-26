@@ -24,6 +24,7 @@ public class Enemy : MonoBehaviour
         _polygonCollider2D = GetComponent<PolygonCollider2D>();
     }
 
+
     private void Update()
     {
         EnemyMove();
@@ -32,10 +33,14 @@ public class Enemy : MonoBehaviour
     
     private void EnemyMove()
     {
+        
         var isTouchingLayers = _polygonCollider2D.IsTouchingLayers(LayerMask.GetMask("Cat"));
-        // if cat and chicken are touching --> then dont continue with the rest of the code
-        if (isTouchingLayers) { return; } // ****************** FIX THISSS TOMORRROWW ***************
-        _rigidbody2D.velocity = new Vector2(enemySpeed, _rigidbody2D.velocity.y);
+        // if chicken and cat are touching --> then chicken run away from cat (MAYBE IMPLEMENT THIS LATER) *****
+        if (isTouchingLayers)
+        {
+            enemySpeed = 0;
+        }
+        _rigidbody2D.velocity = new Vector2(enemySpeed, 0f);
     }
 
     // Detects which collider the chicken hit, inorder to go in the opposite direction
@@ -53,6 +58,8 @@ public class Enemy : MonoBehaviour
             isGoingRight = false;
             enemySpeed = -enemySpeed; // Controls the chicken move direction
         }
+        
+       
     }
 
     // Control the direction the chicken sprite is facing

@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 9090096334417135416}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.14, y: -4.97, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -132,15 +132,15 @@ PolygonCollider2D:
   m_Points:
     m_Paths:
     - - {x: 0.17403378, y: 0.25639296}
-      - {x: -0.4059829, y: 0.7995057}
-      - {x: -0.79044414, y: 0.28012836}
-      - {x: -0.63558745, y: -0.18578313}
-      - {x: -0.3488903, y: -0.34348726}
-      - {x: -0.3253984, y: -0.59940445}
-      - {x: 0.104474425, y: -0.61824024}
-      - {x: 0.59685016, y: -0.3355427}
-      - {x: 0.7757833, y: 0.06518462}
-      - {x: 0.45163304, y: 0.6176738}
+      - {x: -0.2548713, y: 0.57787514}
+      - {x: -0.40762782, y: 0.28012836}
+      - {x: -0.31321597, y: -0.15556072}
+      - {x: -0.12725925, y: -0.37370944}
+      - {x: -0.2401833, y: -0.55679715}
+      - {x: 0.08743131, y: -0.5671114}
+      - {x: 0.49459243, y: -0.23328498}
+      - {x: 0.665004, y: 0.07370618}
+      - {x: 0.44311148, y: 0.4898519}
 --- !u!114 &9090096334417135395
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,6 +153,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da4b844e4bac9d42a7d8fa8d731fcb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemySpeed: 2
+  enemySpeed: 1.3
   leftBoxCollider: {fileID: 0}
   rightBoxCollider: {fileID: 0}

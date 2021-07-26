@@ -96,7 +96,7 @@ public class Cat : MonoBehaviour
 
       bool isTouchingLayers = _polygonCollider2D.IsTouchingLayers(LayerMask.GetMask("Chicken"));
       // if cat and chicken are touching --> then dont continue with the rest of the code
-      if (isTouchingLayers) { return; } // ****************** FIX THISSS TOMORRROWW ***************
+      if (isTouchingLayers) { return; } 
       
       if (_nearestEnemy != null)
       {
