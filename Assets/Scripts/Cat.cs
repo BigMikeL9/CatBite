@@ -12,8 +12,8 @@ public class Cat : MonoBehaviour
    [SerializeField] float speed = 5f;
 
    // States
-   bool isMoving;
-
+   bool _isMoving;
+   bool _isTouchingLayers;
 
    // Cache
    LineRenderer _lineRenderer;
@@ -22,14 +22,16 @@ public class Cat : MonoBehaviour
    Transform _nearestEnemy;
    Enemy[] _enemies;
    Rigidbody2D _rigidbody2D;
-   float distance;
    PolygonCollider2D _polygonCollider2D;
+   Animator _animator;
+   float distance;
 
    private void Start()
    {
       _lineRenderer = GetComponent<LineRenderer>();
       _rigidbody2D = GetComponent<Rigidbody2D>();
       _polygonCollider2D = GetComponent<PolygonCollider2D>();
+      _animator = GetComponent<Animator>();
 
       _gameSession = FindObjectOfType<GameSession>();
       _enemies = FindObjectsOfType<Enemy>();
@@ -42,6 +44,7 @@ public class Cat : MonoBehaviour
    {
       AimIndicator();
       FindClosestEnemy();
+      MoveTowardNearestEnemy();
       FlipSprite();
    }
    
@@ -53,19 +56,10 @@ public class Cat : MonoBehaviour
       // Line renderer extends to the updated ball position
       _lineRenderer.SetPosition(0, transform.position);
    }
-
-   // if cat touches enemy 
-      // destroy enemy and cat
-   private void OnCollisionEnter2D(Collision2D other)
-   {
-      if (other.gameObject.CompareTag("Enemy") )
-      {
-         // _gameSession.ScoreUpdate(enemyValue);
-         Destroy(other.gameObject,2);
-         Destroy(gameObject,3 );
-      }
-   }
-   
+    
+         // Tomorrow: *********************
+   // Each cat find only one enemy to kill --> after that there is a null reference error because that enemy is no
+   // longer there. Solution: - Make the cat idle after it kills one enemy and then dissappear after a delay.
    private void FindClosestEnemy()
    {
       float minDistanceToClosestEnemy = minDistanceToMoveToward;
@@ -93,26 +87,51 @@ public class Cat : MonoBehaviour
          }
          
       }
-
-      bool isTouchingLayers = _polygonCollider2D.IsTouchingLayers(LayerMask.GetMask("Chicken"));
+   }
+   
+   private void MoveTowardNearestEnemy()
+   {
+      _isTouchingLayers = _polygonCollider2D.IsTouchingLayers(LayerMask.GetMask("Chicken"));
+      
+      // Attacking Animation
+      _animator.SetBool("isAttacking", _isTouchingLayers);
+      
       // if cat and chicken are touching --> then dont continue with the rest of the code
-      if (isTouchingLayers) { return; } 
+      if(_isTouchingLayers) { return; }
       
       if (_nearestEnemy != null)
       {
          // Move cat toward chicken when "minDistanceToMoveToward" is reached
          float moveTowardSpeed = speed * Time.deltaTime;
          transform.position = Vector3.MoveTowards(transform.position, _nearestEnemy.transform.position, moveTowardSpeed);
-         isMoving = true;
+         _isMoving = true;
 
          // Debug.Log("Closest enemy is: " + _nearestEnemy + ". Distance is: " + minDistanceToClosestEnemy);
          Debug.DrawLine(transform.position, _nearestEnemy.position, Color.red);
       }
+      else
+      {
+         _isMoving = false;
+      }
+      // Running Animation
+      _animator.SetBool("isRunning", _isMoving);
    }
 
+   
+   // This method is called by an Animation Event
+   public void Attack(int damage)
+   {
+      if (!_isTouchingLayers) { return; }
+
+      Enemy enemy = _nearestEnemy.GetComponent<Enemy>();
+      enemy.TakeDamage(damage);
+      
+   }
+   
+   
    private void FlipSprite()
    {
-      if (isMoving && _nearestEnemy != null)
+      if (_isMoving && _nearestEnemy != null)
       {
          // gets the position of the cat in local space, relative to the closest enemy
          Vector3 relativePoint = transform.InverseTransformPoint(_nearestEnemy.transform.position);

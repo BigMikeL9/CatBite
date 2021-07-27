@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 5114346762593474903}
   m_Layer: 7
   m_Name: Cat Brown
-  m_TagString: Untagged
+  m_TagString: Cat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +126,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 14.45844
+  m_Distance: 13.882108
   m_DampingRatio: 0
   m_Frequency: 1
 --- !u!120 &5114346762593474898
@@ -252,10 +252,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.766129, y: -0.10483871}
-      - {x: 0.766129, y: 0.17741935}
-      - {x: 0.7016129, y: 0.17741935}
-      - {x: 0.7177419, y: 0.49193546}
+    - - {x: 0.81775045, y: -0.14711508}
+      - {x: 0.8306122, y: -0.09231019}
+      - {x: 0.8392215, y: -0.056249857}
+      - {x: 0.9642992, y: 0.19133133}
+      - {x: 0.7732939, y: 0.3469512}
+      - {x: 0.7187595, y: 0.44467828}
       - {x: 0.62903225, y: 0.58064514}
       - {x: 0.5, y: 0.58064514}
       - {x: 0.41935483, y: 0.49193546}
@@ -271,11 +273,12 @@ PolygonCollider2D:
       - {x: -0.62096775, y: -0.22580644}
       - {x: -0.62096775, y: -0.42741933}
       - {x: -0.47580644, y: -0.58064514}
-      - {x: -0.3467742, y: -0.6451613}
-      - {x: 0.37903225, y: -0.6451613}
+      - {x: -0.3467742, y: -0.5984343}
+      - {x: 0.36034167, y: -0.5937618}
       - {x: 0.4596774, y: -0.5645161}
       - {x: 0.54032254, y: -0.3467742}
-      - {x: 0.7016129, y: -0.18548387}
+      - {x: 0.6964407, y: -0.34485483}
+      - {x: 0.8184299, y: -0.21351999}
     - - {x: -0.33870965, y: -0.26612902}
       - {x: -0.30645162, y: -0.26612902}
       - {x: -0.30645162, y: -0.29838708}
@@ -294,7 +297,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyValue: 100
   minDistanceToMoveToward: 5
-  speed: 1
+  speed: 1.5
 --- !u!95 &5114346762593474903
 Animator:
   serializedVersion: 3
