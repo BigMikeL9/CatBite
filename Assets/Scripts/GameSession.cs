@@ -10,26 +10,48 @@ public class GameSession : MonoBehaviour
 {
     [Header("Health System")]
     [SerializeField] int playerHealth = 3;
-    [SerializeField] int maxNumOfHealth = 3; // when this is equal to 3, I should have only 3 heart containers visible in my scene view
-    [SerializeField] Image[] hearts;
-    [SerializeField] Sprite fullHeart;
-    [SerializeField] Sprite emptyHeart;
-
-
+    
     [Header("Score System")] 
     [SerializeField] TextMeshPro scoreText;
     [SerializeField] int startingScore = 0;
     
     // Cache
+    Enemy[] _enemies;
+
     
-    
+    private void OnEnable()
+    {
+        // adds all the enemies in the scene to the "_enemies" array
+        _enemies = FindObjectsOfType<Enemy>();
+    }
+
     
     private void Start()
     {
         scoreText.text = startingScore.ToString();
     }
-    
 
+    private void Update()
+    {
+        enemyTracker();
+    }
+
+    // counts the number of enemies in the level
+    private void enemyTracker() //change method name later *****************
+    {
+        foreach (var enemy in _enemies)
+        {
+            // if enemy is not dead yet
+            if (enemy != null)
+            {
+                // Dont do anything
+                return;
+            }
+            
+            Debug.Log("You Killed all Enemies!!");
+            // Show win screen with next level button
+        }
+    }
     public void ScoreUpdate(int scoreValue)
     {
         startingScore += scoreValue;
@@ -42,31 +64,6 @@ public class GameSession : MonoBehaviour
         {
             // trigger lose message and retry button
                 // if retry button clicked reload scene
-        }
-    }
-    
-    private void HeartSystem()
-    {
-        for (int i = 0; i < hearts.Length; i++)
-        {
-            if (i < playerHealth) // controls which type of heart is displayed
-            {
-                hearts[i].sprite = fullHeart;
-            }
-            else
-            {
-                hearts[i].sprite = emptyHeart;
-            }
-            
-            if (i < maxNumOfHealth) // controls how many hearts should be displayed in relation to
-                // the max allowed health that the player can have
-            {                       
-                hearts[i].enabled = true;  
-            }
-            else
-            {
-                hearts[i].enabled = false; // This hides any extra hearts in the array that we have, that is more than maxNumOfHealth.
-            }
         }
     }
     
