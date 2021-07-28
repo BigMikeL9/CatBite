@@ -7,37 +7,41 @@ using UnityEngine;
 public class Cat : MonoBehaviour
 {
    // Config
-   [SerializeField] int enemyValue = 100;
-   [SerializeField] float minDistanceToMoveToward = 5f;
+   [Header("Cat Configs")]
    [SerializeField] float speed = 5f;
+   [SerializeField] float jumpForce = 10f;
+   [SerializeField] float minDistanceToMoveToward = 5f;
+   [SerializeField] int enemyValue = 100;
+   
 
    // States
    bool _isMoving;
-   bool _isTouchingLayers;
+   bool _isTouchingChicken;
 
    // Cache
    LineRenderer _lineRenderer;
    Vector3 _startingPoistion;
-   GameSession _gameSession;
    Transform _nearestEnemy;
    Enemy[] _enemies;
    Rigidbody2D _rigidbody2D;
-   PolygonCollider2D _polygonCollider2D;
+   PolygonCollider2D _bodyCollider;
+   CircleCollider2D _jumpDetectionCollider;
    Animator _animator;
    float distance;
+   GameSession _gameSession;
 
    private void Start()
    {
       _lineRenderer = GetComponent<LineRenderer>();
       _rigidbody2D = GetComponent<Rigidbody2D>();
-      _polygonCollider2D = GetComponent<PolygonCollider2D>();
+      _bodyCollider = GetComponent<PolygonCollider2D>();
+      _jumpDetectionCollider = GetComponent<CircleCollider2D>();
       _animator = GetComponent<Animator>();
 
       _gameSession = FindObjectOfType<GameSession>();
       _enemies = FindObjectsOfType<Enemy>();
 
       _startingPoistion = transform.position;
-      
    }
 
    private void Update()
@@ -45,6 +49,7 @@ public class Cat : MonoBehaviour
       AimIndicator();
       FindClosestEnemy();
       MoveTowardNearestEnemy();
+      CatJump();
       FlipSprite();
    }
    
@@ -59,7 +64,7 @@ public class Cat : MonoBehaviour
     
          // Tomorrow: *********************
    // Each cat find only one enemy to kill --> after that there is a null reference error because that enemy is no
-   // longer there. Solution: - Make the cat idle after it kills one enemy and then dissappear after a delay.
+   // longer there. Solution: - Make the cat idle after it kills one enemy and then disappear after a delay.
    private void FindClosestEnemy()
    {
       float minDistanceToClosestEnemy = minDistanceToMoveToward;
@@ -91,13 +96,13 @@ public class Cat : MonoBehaviour
    
    private void MoveTowardNearestEnemy()
    {
-      _isTouchingLayers = _polygonCollider2D.IsTouchingLayers(LayerMask.GetMask("Chicken"));
+      _isTouchingChicken = _bodyCollider.IsTouchingLayers(LayerMask.GetMask("Chicken"));
       
       // Attacking Animation
-      _animator.SetBool("isAttacking", _isTouchingLayers);
+      _animator.SetBool("isAttacking", _isTouchingChicken);
       
       // if cat and chicken are touching --> then dont continue with the rest of the code
-      if(_isTouchingLayers) { return; }
+      if(_isTouchingChicken) { return; }
       
       if (_nearestEnemy != null)
       {
@@ -121,11 +126,20 @@ public class Cat : MonoBehaviour
    // This method is called by an Animation Event
    public void Attack(int damage)
    {
-      if (!_isTouchingLayers) { return; }
+      // if cat IS touching obstacle --> then dont continue with the rest of the code
+      // if cat is NOT touching chicken --> then dont continue with rest of the code
+      if (!_isTouchingChicken) { return; }
 
       Enemy enemy = _nearestEnemy.GetComponent<Enemy>();
       enemy.TakeDamage(damage);
-      
+   }
+
+   private void CatJump()
+   {
+      bool isTouchingObstacle = _jumpDetectionCollider.IsTouchingLayers(LayerMask.GetMask("Obstacle"));
+      if (!isTouchingObstacle) { return; }
+        
+      _rigidbody2D.AddForce(Vector2.up * jumpForce);
    }
    
    

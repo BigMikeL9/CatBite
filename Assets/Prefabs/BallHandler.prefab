@@ -47,3 +47,4 @@ MonoBehaviour:
   pivotPoint: {fileID: 0}
   detachBallDelay: 0.15
   spawnDelay: 2
+  maxDragDistance: 5

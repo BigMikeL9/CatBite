@@ -19,7 +19,11 @@ public class GameSession : MonoBehaviour
     [Header("Score System")] 
     [SerializeField] TextMeshPro scoreText;
     [SerializeField] int startingScore = 0;
-
+    
+    // Cache
+    
+    
+    
     private void Start()
     {
         scoreText.text = startingScore.ToString();
@@ -70,6 +74,12 @@ public class GameSession : MonoBehaviour
     {
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex);
+    }
+
+    public void loadNextScene()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        SceneManager.LoadScene(currentSceneIndex + 1);
     }
     
 }

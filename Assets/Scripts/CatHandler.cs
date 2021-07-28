@@ -12,6 +12,7 @@ public class CatHandler : MonoBehaviour
     [SerializeField] Rigidbody2D pivotPoint;
     [SerializeField] float detachBallDelay = 1f;
     [SerializeField] float spawnDelay = 1f;
+    [SerializeField] float maxDragDistance = 2f;
     // [SerializeField] float destroyDelay;
 
     // states
@@ -21,10 +22,13 @@ public class CatHandler : MonoBehaviour
     Rigidbody2D _currentBallRb;
     SpringJoint2D _currentBallSj;
     GameObject _catInstance;
+    Camera _camera;
 
     private void Start()
     {
         RespawnCat();
+        
+        _camera = Camera.main;
     }
 
     void Update()
@@ -61,10 +65,22 @@ public class CatHandler : MonoBehaviour
         var touchPosition = Touchscreen.current.primaryTouch.position.ReadValue();
         
         // Converts touchPosition from screenSpace coordinates to worldSpace coordinates. 
-        var worldPosition = Camera.main.ScreenToWorldPoint(touchPosition);
+        Vector2 worldPosition = _camera.ScreenToWorldPoint(touchPosition);
+        
+        // if distance between our touchPosition and the hook position is greater than maxDragDistance
+        if (Vector3.Distance(worldPosition, pivotPoint.position) > maxDragDistance)
+        {
+            // then prevent the player from dragging any further
+                // ".normalized" is to make the "(current Ball position - pivot point position)" equal to 1.
+                    // (current hook position) + (current Ball position - pivot point position).normalized * (max allowed drag distance)
 
-        // Changes ball position in relation to where we touch the screen
-        _currentBallRb.position = worldPosition;
+                    _currentBallRb.position = pivotPoint.position + (worldPosition - pivotPoint.position).normalized * maxDragDistance;
+        }
+        else
+        {
+            // Changes ball position in relation to where we touch the screen
+            _currentBallRb.position = worldPosition;
+        }
         
         // Sets Rb to kinematic when touching the ball
         _currentBallRb.isKinematic = true;
