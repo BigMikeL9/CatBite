@@ -27,7 +27,7 @@ public class Cat : MonoBehaviour
    PolygonCollider2D _bodyCollider;
    CircleCollider2D _jumpDetectionCollider;
    Animator _animator;
-   float distance;
+   float _distance;
    GameSession _gameSession;
 
    private void Start()
@@ -76,14 +76,14 @@ public class Cat : MonoBehaviour
          if (enemy != null)
          {
             // gets the distance between cat and enemy
-            distance = Vector3.Distance(transform.position, enemy.transform.position);
+            _distance = Vector3.Distance(transform.position, enemy.transform.position);
             // if the distance between them is smaller than ... (minDistanceToClosestEnemy)
-            if (distance < minDistanceToClosestEnemy)
+            if (_distance < minDistanceToClosestEnemy)
             {
                // then set the nearest enemy to the closest one
                _nearestEnemy = enemy.transform;
                // the new distance is the closest one
-               minDistanceToClosestEnemy = distance;
+               minDistanceToClosestEnemy = _distance;
             }
          } 
          else
@@ -137,9 +137,14 @@ public class Cat : MonoBehaviour
    private void CatJump()
    {
       bool isTouchingObstacle = _jumpDetectionCollider.IsTouchingLayers(LayerMask.GetMask("Obstacle"));
+      
+      // Jumping Animation
+      _animator.SetBool("isJumping", isTouchingObstacle);
       if (!isTouchingObstacle) { return; }
         
       _rigidbody2D.AddForce(Vector2.up * jumpForce);
+     
+      
    }
    
    

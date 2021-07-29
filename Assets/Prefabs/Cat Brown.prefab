@@ -199,7 +199,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 5.4711056
+  m_Distance: 9.769223
   m_DampingRatio: 0
   m_Frequency: 1
 --- !u!120 &5114346762593474898
@@ -333,5 +333,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.5
   jumpForce: 8
-  minDistanceToMoveToward: 5
+  minDistanceToMoveToward: 3
   enemyValue: 100
