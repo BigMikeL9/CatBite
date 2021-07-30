@@ -5,11 +5,11 @@ using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
-using UnityEngine.Serialization;
 using UnityEngine.UI;
 
-public class GameSession : MonoBehaviour
+public class GameManager : MonoBehaviour
 {
+    // Configs 
     [Header("Health System")]
     [Tooltip("The max number of cats that will spawn in level.")]
     [SerializeField] int numberOfCats = 3;
@@ -17,9 +17,13 @@ public class GameSession : MonoBehaviour
     [Header("Score System")] 
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] int startingScore;
+
+    [Header("Level System")]
+    [SerializeField] Button[] levelButtons;
     
     // Cache
     Enemy[] _enemies;
+    
 
     
     private void OnEnable()
@@ -114,6 +118,21 @@ public class GameSession : MonoBehaviour
     {
         startingScore += scoreValue;
         scoreText.text = startingScore.ToString();
+    }
+    
+    private void LevelSelectionSystem()
+    {
+        // Change the int value to whatever your level selection build index is on your build settings 
+        int levelAt = PlayerPrefs.GetInt("levelAt", 2); 
+        
+        for (int i = 0; i < levelButtons.Length; i++) 
+        {
+            // if 
+            if (i + 2 > levelAt) 
+            {
+                levelButtons[i].interactable = false;
+            }
+        }
     }
     
    

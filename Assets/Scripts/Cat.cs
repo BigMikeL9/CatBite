@@ -28,7 +28,7 @@ public class Cat : MonoBehaviour
    CircleCollider2D _jumpDetectionCollider;
    Animator _animator;
    float _distance;
-   GameSession _gameSession;
+   GameManager _gameManager;
 
    private void Start()
    {
@@ -38,7 +38,7 @@ public class Cat : MonoBehaviour
       _jumpDetectionCollider = GetComponent<CircleCollider2D>();
       _animator = GetComponent<Animator>();
 
-      _gameSession = FindObjectOfType<GameSession>();
+      _gameManager = FindObjectOfType<GameManager>();
       _enemies = FindObjectsOfType<Enemy>();
 
       _startingPoistion = transform.position;
