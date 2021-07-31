@@ -46,4 +46,5 @@ MonoBehaviour:
   numberOfCats: 3
   scoreText: {fileID: 0}
   startingScore: 0
+  looseScreenCountDown: 8
   levelButtons: []

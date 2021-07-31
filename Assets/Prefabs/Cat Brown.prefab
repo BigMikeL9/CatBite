@@ -333,5 +333,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 1.5
   jumpForce: 8
-  minDistanceToMoveToward: 3
+  minDistanceToMoveToward: 4
+  destroyCatDelay: 2
   enemyValue: 100

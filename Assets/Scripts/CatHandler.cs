@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using Cinemachine;
@@ -13,7 +14,6 @@ public class CatHandler : MonoBehaviour
     [SerializeField] float detachBallDelay = 1f;
     [SerializeField] float spawnDelay = 1f;
     [SerializeField] float maxDragDistance = 2f;
-    // [SerializeField] float destroyDelay;
 
     // states
     bool isDragging;
@@ -23,11 +23,14 @@ public class CatHandler : MonoBehaviour
     SpringJoint2D _currentBallSj;
     GameObject _catInstance;
     Camera _camera;
+    GameManager _gameManager;
+    public bool spawnCats = true;
 
     private void Start()
     {
         RespawnCat();
-        
+
+        _gameManager = FindObjectOfType<GameManager>();
         _camera = Camera.main;
     }
 
@@ -48,6 +51,7 @@ public class CatHandler : MonoBehaviour
             if (isDragging)
             {
                 LauchCat();
+                _gameManager.UpdateNumberOfCats();
             }
             
             // Hides the AimIndicator when we're not touching the screen
@@ -114,26 +118,19 @@ public class CatHandler : MonoBehaviour
 
     private void RespawnCat()
     {
-        _catInstance = Instantiate(catPrefab, pivotPoint.position, Quaternion.identity);
+        // if number of cats is equal to 0 --> dont spawn more cats
+        // if (_gameManager.GetNumberOfCats() <= 0) { return; }
+        if (spawnCats)
+        {
+            _catInstance = Instantiate(catPrefab, pivotPoint.position, Quaternion.identity);
 
 
-        // sets the rb to be equal to that of the instantiated ball's rb.
-        _currentBallRb = _catInstance.GetComponent<Rigidbody2D>();
-        _currentBallSj = _catInstance.GetComponent<SpringJoint2D>();
+            // sets the rb to be equal to that of the instantiated ball's rb.
+            _currentBallRb = _catInstance.GetComponent<Rigidbody2D>();
+            _currentBallSj = _catInstance.GetComponent<SpringJoint2D>();
         
-        // this line will attach the ball to the pivot
-        _currentBallSj.connectedBody = pivotPoint;
-        
+            // this line will attach the ball to the pivot
+            _currentBallSj.connectedBody = pivotPoint;
+        }
     }
-    
-
-    // destroys the instantiated ball after a delay
-    // IEnumerator DestroyCat()
-    // {
-    //     yield return new WaitForSeconds(destroyDelay);
-    //     Destroy(_ballInstance);
-    //     
-    // }
-    
- 
 }
