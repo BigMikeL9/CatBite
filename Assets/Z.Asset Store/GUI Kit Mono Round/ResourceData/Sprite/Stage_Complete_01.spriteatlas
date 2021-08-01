@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Stage_Complete_01
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 784b470e61e5c41b98a1777f35d175fd, type: 3}
+    totalSpriteSurfaceArea: 46336
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: e1935d692dc1f46e99d4c6f43fee7bfa, type: 3}
+  - {fileID: 21300000, guid: d5090eda1bd874e3e8eaec068eb7c2dc, type: 3}
+  - {fileID: 21300000, guid: 9e7c393b0fca544bbafa5afe9dcb5891, type: 3}
+  - {fileID: 21300000, guid: 5a962edb26fc9444fb82021c72863569, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - bottom_icon_resume
+  - label_blue
+  - bottom_icon_home
+  - bottom_icon_restart
+  m_RenderDataMap: {}
+  m_Tag: Stage_Complete_01
+  m_IsVariant: 0

@@ -199,7 +199,7 @@ SpringJoint2D:
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
   m_AutoConfigureDistance: 1
-  m_Distance: 9.769223
+  m_Distance: 0.005
   m_DampingRatio: 0
   m_Frequency: 1
 --- !u!120 &5114346762593474898
@@ -244,7 +244,7 @@ LineRenderer:
   m_SortingOrder: 0
   m_Positions:
   - {x: 1, y: 0, z: 0}
-  - {x: 20, y: 0, z: 0}
+  - {x: 6, y: 0, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -334,5 +334,4 @@ MonoBehaviour:
   speed: 1.5
   jumpForce: 8
   minDistanceToMoveToward: 4
-  destroyCatDelay: 2
   enemyValue: 100

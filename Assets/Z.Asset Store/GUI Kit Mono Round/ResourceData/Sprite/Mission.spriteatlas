@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Mission
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: bcf0fb942af034ed6a56f0c405159f79, type: 3}
+    totalSpriteSurfaceArea: 143348
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: f11c14301c6044368bb375d9106e6869, type: 3}
+  - {fileID: 21300000, guid: cdb841e045d89441399f06db3d4e14f3, type: 3}
+  - {fileID: 21300000, guid: 37bfb651a85944cbb82d624d9214b393, type: 3}
+  - {fileID: 21300000, guid: 34573f627cbaf42819138acc97749048, type: 3}
+  - {fileID: 21300000, guid: 0163074565f2945b5a7a658558dc3761, type: 3}
+  - {fileID: 21300000, guid: a63640b930403470cb078e45c445ae98, type: 3}
+  - {fileID: 21300000, guid: 7307cbb9fb1af4bf8a637caccb06c768, type: 3}
+  - {fileID: 21300000, guid: 90e6f55a8253f4215836b4857b72225e, type: 3}
+  - {fileID: 21300000, guid: 494def1c6440942efabe6a2a14c2644e, type: 3}
+  - {fileID: 21300000, guid: 6c10338c5bb9f44b7b7562bf70ba7943, type: 3}
+  - {fileID: 21300000, guid: 3f9d016d1014141cd9e0303e66f4b6d3, type: 3}
+  - {fileID: 21300000, guid: e841151e3918e44b49e1505d5c3f294a, type: 3}
+  - {fileID: 21300000, guid: c7a3ed8e7cc644fbc870d977bcdcaca0, type: 3}
+  - {fileID: 21300000, guid: fb89d7ce1f8974f538b0b60da098d162, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - icon_kill
+  - icon_bg_red
+  - titleicon_mission
+  - mission_clear_badge
+  - mission_btn_icon_gem
+  - mission_btn_icon_life
+  - icon_bg_blue
+  - mission_btn_icon_potion
+  - icon_key
+  - icon_medal
+  - icon_bg_gray
+  - icon_collect
+  - icon_bg_green
+  - mission_btn_icon_coin
+  m_RenderDataMap: {}
+  m_Tag: Mission
+  m_IsVariant: 0

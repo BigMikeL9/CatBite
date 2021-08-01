@@ -25,15 +25,18 @@ public class GameManager : MonoBehaviour
     [SerializeField] Button[] levelButtons;
     
     
+    
     // Cache
     Enemy[] _enemies;
     string CURRENT_LEVEL_KEY;
-    int currentSceneIndex;
     CatHandler _catHandler;
+    SceneController _sceneController;
 
 
     private void OnEnable()
     {
+        _sceneController = FindObjectOfType<SceneController>();
+
         // adds all the enemies in the scene to the "_enemies" array
         _enemies = FindObjectsOfType<Enemy>();
     }
@@ -46,8 +49,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _catHandler = FindObjectOfType<CatHandler>();
-        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        
+
+
         // scoreText.text = startingScore.ToString();
     }
 
@@ -83,22 +86,6 @@ public class GameManager : MonoBehaviour
             _catHandler.spawnCats = false;
         }
     }
-
-    // Makes buttons interactable, depending on what level we are in.
-    private void LevelSelectionSystem()
-    {
-        // Change the int value to whatever your level selection build index is on your build settings 
-        int levelAt = PlayerPrefs.GetInt(CURRENT_LEVEL_KEY, 2); 
-        
-        for (int i = 0; i < levelButtons.Length; i++) 
-        {
-            // if 
-            if (i + 2 > levelAt) 
-            {
-                levelButtons[i].interactable = false;
-            }
-        }
-    }
     
     
     private bool AllEnemiesDead() 
@@ -121,7 +108,7 @@ public class GameManager : MonoBehaviour
     {
         if (AllEnemiesDead() && numberOfCats >= 0)
         {
-            if (currentSceneIndex == 10) // MAX LEVEL
+            if (_sceneController.GetCurrentSceneIndex() == 10) // MAX LEVEL
             {
                 Debug.Log("YOU WON THE GAAAAMEE!");
                 // Show Win game screen or more coming soon screen
@@ -130,6 +117,7 @@ public class GameManager : MonoBehaviour
             {
                 Debug.Log("You Won the level!!");
                 // Time.timeScale = 0;
+                UpdateCurrentLevelPlayerPref();
                 // Show win screen with next level button
             }
         }
@@ -141,7 +129,7 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(looseScreenCountDown);
             Debug.Log("YOU LOOOOSEE");
-            Time.timeScale = 0;
+            // Time.timeScale = 0;
             // SHOW LOse screen with restart level button
         }
     }
@@ -150,12 +138,27 @@ public class GameManager : MonoBehaviour
     // Updates the PlayerPrefs value, depending on what level we are at.
     private void UpdateCurrentLevelPlayerPref() // there might be a bug here **********************
     {
-        if (currentSceneIndex > PlayerPrefs.GetInt(CURRENT_LEVEL_KEY))
+        if (_sceneController.GetCurrentSceneIndex() > PlayerPrefs.GetInt(CURRENT_LEVEL_KEY))
         {
-            PlayerPrefs.SetInt(CURRENT_LEVEL_KEY, currentSceneIndex);
+            PlayerPrefs.SetInt(CURRENT_LEVEL_KEY, _sceneController.GetCurrentSceneIndex());
         }
     }
     
+    // Makes buttons interactable, depending on what level we are in.
+    private void LevelSelectionSystem()
+    {
+        // Change the int value to whatever your level selection build index is on your build settings 
+        int levelAt = PlayerPrefs.GetInt(CURRENT_LEVEL_KEY, 2); 
+        
+        for (int i = 0; i < levelButtons.Length; i++) 
+        {
+            // if 
+            if (i + 3 > levelAt) 
+            {
+                levelButtons[i].interactable = false;
+            }
+        }
+    }
     
     // Resets PlayerPrefs to default value. Deletes all saved progress
     private void DeletePlayerPrefs() // Might use this later
@@ -164,27 +167,6 @@ public class GameManager : MonoBehaviour
         {
             PlayerPrefs.DeleteAll();
         }
-    }
-
-    public void RestartLevel()
-    {
-        SceneManager.LoadScene(currentSceneIndex);
-        Destroy(gameObject); // Resets the GameManager Script
-        // Time.timeScale = 1;
-    }
-    
-    
-    public void LoadNextScene()
-    {
-        SceneManager.LoadScene(currentSceneIndex + 1);
-        // Time.timeScale = 1;
-        Destroy(gameObject);
-        
-    }
-    
-    public void Quit()
-    {
-        Application.Quit();
     }
     
     public void ScoreUpdate(int scoreValue)

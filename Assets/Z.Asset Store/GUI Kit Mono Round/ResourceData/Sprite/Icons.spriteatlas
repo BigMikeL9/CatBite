@@ -1,0 +1,200 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Icons
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 45d34b89c6fd5475e804845571bf2991, type: 3}
+    totalSpriteSurfaceArea: 1883248
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: 2b258f609ef324a59b3a185e863853a6, type: 3}
+  - {fileID: 21300000, guid: 5a30c37041d1b4791acf7fc0629950f3, type: 3}
+  - {fileID: 21300000, guid: 2b9e6e902a1d442d4aa4a148abdca4f2, type: 3}
+  - {fileID: 21300000, guid: e3b9add06b06f4ebe9606910dcc84857, type: 3}
+  - {fileID: 21300000, guid: 7e3243e052c1d46b383b938a8b3355bc, type: 3}
+  - {fileID: 21300000, guid: 65151df02ab2843209acfba781081b3c, type: 3}
+  - {fileID: 21300000, guid: bb35de514fa6342e4b480d81f7e5ebf2, type: 3}
+  - {fileID: 21300000, guid: ff744bb19a3e848d28aa8fa93edbd90d, type: 3}
+  - {fileID: 21300000, guid: ffca1cd1a9e484badbace882a9ebb3c0, type: 3}
+  - {fileID: 21300000, guid: 4e364452810f5456fbed36f91ba318d4, type: 3}
+  - {fileID: 21300000, guid: 0aae3f526d3dd4ccd90415bd7e298439, type: 3}
+  - {fileID: 21300000, guid: 8907b8b2eb4cf41fdbc652a17066a7ed, type: 3}
+  - {fileID: 21300000, guid: 46934fe2643844b618e85e0448a465b6, type: 3}
+  - {fileID: 21300000, guid: fe126253fbe5345c584dbbe4ddb4eb1a, type: 3}
+  - {fileID: 21300000, guid: 5c4b3a539a499438fb5231ebf098a6ed, type: 3}
+  - {fileID: 21300000, guid: 768acaa30e3b24ff3a2bdae2f36da3a2, type: 3}
+  - {fileID: 21300000, guid: 9feb58c3f6ae14e7d8c4c32eb0401484, type: 3}
+  - {fileID: 21300000, guid: bc901fd38568e4fceb64f8a8b16895a4, type: 3}
+  - {fileID: 21300000, guid: e6b802e395bef41a383d34e2d79c45ff, type: 3}
+  - {fileID: 21300000, guid: 9702d8149157d4ee6aaef5d78c44d4b5, type: 3}
+  - {fileID: 21300000, guid: cea56f244f0ef4e2084ced304104776e, type: 3}
+  - {fileID: 21300000, guid: c30fb884c94f340c8b992a01e00fe981, type: 3}
+  - {fileID: 21300000, guid: 28b866a4124cb43709533fe65001d304, type: 3}
+  - {fileID: 21300000, guid: 2b2cd4152f2294fd3b94a367248e5100, type: 3}
+  - {fileID: 21300000, guid: b44e7f359ad044dbf9a5167743bc1b59, type: 3}
+  - {fileID: 21300000, guid: 56440f75a24cf4f6f9dd5fe194a76ec1, type: 3}
+  - {fileID: 21300000, guid: 0723bcb5e655f4b35a4e61b7580dbf49, type: 3}
+  - {fileID: 21300000, guid: c0c8f6c554e6f4f38a9aefe2232fed42, type: 3}
+  - {fileID: 21300000, guid: 2f345cd55b7074a368062321c0f5125f, type: 3}
+  - {fileID: 21300000, guid: ab1e1b26db99d496fbd0d8695088933d, type: 3}
+  - {fileID: 21300000, guid: c7899c962603243dab6f30bbe1a1daeb, type: 3}
+  - {fileID: 21300000, guid: 58c97f969c5a542eda8c654d52e6f7fe, type: 3}
+  - {fileID: 21300000, guid: d54f3fa607bcf47e183f80e57fa68d17, type: 3}
+  - {fileID: 21300000, guid: b69f30c6486754f51b220fb73a48c809, type: 3}
+  - {fileID: 21300000, guid: 435988c61e8794adb99db58277160401, type: 3}
+  - {fileID: 21300000, guid: 095a82d638af44a33ab22f40ca1953aa, type: 3}
+  - {fileID: 21300000, guid: c6c75827b49594a1094a46caa9b20cc5, type: 3}
+  - {fileID: 21300000, guid: b6f4b637a233b446ba342fa3816359f5, type: 3}
+  - {fileID: 21300000, guid: d312fe77f44f946dc858bce96ab040ce, type: 3}
+  - {fileID: 21300000, guid: a997f3c7b0b3e44c28225970ee0c08de, type: 3}
+  - {fileID: 21300000, guid: 16d3bcc729e2c43ebb2b9702fc021c09, type: 3}
+  - {fileID: 21300000, guid: 871b9dc72aa3e483897a2b98a6e7fd71, type: 3}
+  - {fileID: 21300000, guid: 33c90738c1c33493783100fbb3ec85cc, type: 3}
+  - {fileID: 21300000, guid: c45c5738cc34c432099a08b9db53ee64, type: 3}
+  - {fileID: 21300000, guid: c3bece38de9f249cbbeb744696a5dafd, type: 3}
+  - {fileID: 21300000, guid: b76bcca820858444c9fdb81b1c522d06, type: 3}
+  - {fileID: 21300000, guid: 061fa2c8018b447169882787bbb97fbd, type: 3}
+  - {fileID: 21300000, guid: a03c08c87c51648599de0e409972c632, type: 3}
+  - {fileID: 21300000, guid: 5a2447f836d294606bc95a1dd41bf96e, type: 3}
+  - {fileID: 21300000, guid: 99e5b7f851ee0494d8697f114c43df17, type: 3}
+  - {fileID: 21300000, guid: 3b02cd9980fbc4e9b95df7abd080e9b8, type: 3}
+  - {fileID: 21300000, guid: c476b0e9d1b6b4828a8d8cb3b10bea65, type: 3}
+  - {fileID: 21300000, guid: 396f810a35b0f4d69921cb0178c6abc2, type: 3}
+  - {fileID: 21300000, guid: 53c588aa008c84ba7bcb0366f3479325, type: 3}
+  - {fileID: 21300000, guid: 419727baa7d494e03831d86a27d3fbc9, type: 3}
+  - {fileID: 21300000, guid: 0dbc05cadb83b4508a5a08d7d214be20, type: 3}
+  - {fileID: 21300000, guid: b09b2bca23a254de7a49ec035a3abcd6, type: 3}
+  - {fileID: 21300000, guid: 4f3aa1cbe4cbe42248d16cd8704ed5e5, type: 3}
+  - {fileID: 21300000, guid: fbaa1d3c3a2c24c76a2de032550d5a5d, type: 3}
+  - {fileID: 21300000, guid: b9d95f6ce4c294cb88bf8b6d824f9b10, type: 3}
+  - {fileID: 21300000, guid: b457cabc0fb354f45800994f0a5c3995, type: 3}
+  - {fileID: 21300000, guid: 88cf77cc021914fc39645bd49bd038bc, type: 3}
+  - {fileID: 21300000, guid: cce22e0df62d24425b1b4564759e400a, type: 3}
+  - {fileID: 21300000, guid: d7ea6a7d7d131404090575b6e7a5d747, type: 3}
+  - {fileID: 21300000, guid: 4bc0329dd615147eeb1f2b0b18c10759, type: 3}
+  - {fileID: 21300000, guid: 83afa4ad43e64435b844a3be7ad985a6, type: 3}
+  - {fileID: 21300000, guid: d4651bad15d30434a982fe8dd28d76b0, type: 3}
+  - {fileID: 21300000, guid: 41cc64edcb10c48819942e5030958271, type: 3}
+  - {fileID: 21300000, guid: b24eef3edd26c4e349531af03c3f03bd, type: 3}
+  - {fileID: 21300000, guid: 3667294e30d234510b6635162152f383, type: 3}
+  - {fileID: 21300000, guid: 57cefb7ef05ec4d0e94e3dbee30b78b4, type: 3}
+  - {fileID: 21300000, guid: d1391d9ed20b3491384fd4858f9a6f72, type: 3}
+  - {fileID: 21300000, guid: 0f799ebe641bd4ad0b435cd651cb9624, type: 3}
+  - {fileID: 21300000, guid: d60e4dfed03734402a64bf8867e5f909, type: 3}
+  - {fileID: 21300000, guid: 45c4cdfedb3af447985540356c742d10, type: 3}
+  - {fileID: 21300000, guid: 6ec7ce4f9eb14479094bd7084228b40a, type: 3}
+  - {fileID: 21300000, guid: 45de03bf90803496ea507e99722fa159, type: 3}
+  - {fileID: 21300000, guid: aa4641fff2d0d432d80902f3c4d5f63f, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - icon_ic_gold_3
+  - icon_ic_potion
+  - icon_ic_gold_2
+  - all_icon_energy
+  - icon_bg_brown_1
+  - icon_ic_hammer
+  - icon_ic_gem
+  - all_icon_treasure
+  - all_icon_avatar_female
+  - icon_bg_yellow_1_dark
+  - all_icon_life
+  - icon_bg_brown_0_light
+  - icon_ic_key
+  - icon_bg_green
+  - icon_ic_avatar_male_black
+  - all_icon_gift
+  - icon_bg_yellow_0
+  - icon_ic_mission
+  - all_icon_save_money
+  - icon_bg_pink_wine
+  - icon_bg_purple
+  - all_icon_lock
+  - icon_ic_gold_1
+  - icon_bg_blue_1
+  - all_icon_shop
+  - all_icon_skull
+  - icon_ic_bomb
+  - icon_ic_life
+  - icon_ic_avatar_female
+  - all_icon_gold_4
+  - icon_bg_orange_0_light
+  - all_icon_gold_2
+  - icon_bg_blue_0_light
+  - icon_ic_skull
+  - icon_ic_medal
+  - icon_ic_time
+  - all_icon_trophy
+  - icon_ic_lock
+  - icon_bg_red
+  - all_icon_medal
+  - all_icon_mission
+  - icon_ic_gift
+  - all_icon_time
+  - icon_ic_shop
+  - all_icon_hammer
+  - all_icon_shield
+  - icon_bg_blue_2_dark
+  - all_icon_avatar_male white
+  - icon_bg_gray_1_dark
+  - icon_bg_gray_0
+  - all_icon_potion
+  - icon_ic_treasure
+  - icon_ic_arrow
+  - all_icon_avatar_male_black
+  - icon_ic_avatar_male white
+  - all_icon_avatar_male_friend
+  - all_icon_bomb
+  - all_icon_arrowl
+  - all_icon_gold_3
+  - icon_bg_orange_1
+  - all_icon_sword
+  - icon_bg_blue_green
+  - all_icon_gem
+  - icon_bg_pink_1
+  - icon_ic_trophy
+  - icon_ic_etting
+  - all_icon_gold_1
+  - icon_ic_energy
+  - all_icon_postbox
+  - icon_ic_save_money
+  - icon_ic_postbox
+  - icon_bg_0_white
+  - icon_ic_shield
+  - all_icon_setting
+  - all_icon_key
+  - icon_bg_pink_0_light
+  - icon_ic_sword
+  - icon_ic_avatar_male_friend
+  m_RenderDataMap: {}
+  m_Tag: Icons
+  m_IsVariant: 0

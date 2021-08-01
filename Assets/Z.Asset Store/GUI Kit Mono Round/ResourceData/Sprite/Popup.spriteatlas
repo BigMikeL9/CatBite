@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Popup
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 159220889f9c84c209eb2424701c4629, type: 3}
+    totalSpriteSurfaceArea: 2337786
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: c66fd50018cb6436ca80055683f9155e, type: 3}
+  - {fileID: 21300000, guid: 887f03e086c0d4a738f2a876f93116b5, type: 3}
+  - {fileID: 21300000, guid: 978a4781126aa4fba8d364db8fb78a47, type: 3}
+  - {fileID: 21300000, guid: 8a3e10a1039e04a8d887d05f9645e4e6, type: 3}
+  - {fileID: 21300000, guid: 782378f1059ad4ee9b934ca36ed94817, type: 3}
+  - {fileID: 21300000, guid: 17625c339393c4436a2dd79fe6ad89fc, type: 3}
+  - {fileID: 21300000, guid: a683f49384d094a71be4603d31b4afcb, type: 3}
+  - {fileID: 21300000, guid: 6b26dac3ed2e0434cafd560894392498, type: 3}
+  - {fileID: 21300000, guid: 84595095f8d7d4d359aec3bf942ae2e3, type: 3}
+  - {fileID: 21300000, guid: cc5594869ee364c44abf4494318596cd, type: 3}
+  - {fileID: 21300000, guid: 5218d586221154d91a28818e78b1f796, type: 3}
+  - {fileID: 21300000, guid: 00eb93f664bc64348a2c957632097d09, type: 3}
+  - {fileID: 21300000, guid: 9b5fef288b1c24f6c93f69bfbb45c96e, type: 3}
+  - {fileID: 21300000, guid: 2f0d5ce9b08304af7ac45935d3d63f14, type: 3}
+  - {fileID: 21300000, guid: 7e4b324aee8f449db9bedc900785edbf, type: 3}
+  - {fileID: 21300000, guid: 95b9b19a8e659446c90113a50e4833b5, type: 3}
+  - {fileID: 21300000, guid: 1a131d7c9298d49ce8490276119a5b28, type: 3}
+  - {fileID: 21300000, guid: 0507be8c293b5489b9d52353253e4db0, type: 3}
+  - {fileID: 21300000, guid: e024fcedacbdd490a94bc5444fa51e1d, type: 3}
+  - {fileID: 21300000, guid: 7b8d570efce4a496792e4d3356c48799, type: 3}
+  - {fileID: 21300000, guid: 9627f38ee84e2487690a9a7e2ada3b8d, type: 3}
+  - {fileID: 21300000, guid: 7d5aba3f86d4f44258c6fc0950b55680, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - popup_notice_bg_gray_rounded
+  - common_btn_color_dark
+  - popup_btn_close
+  - popup_bg_01_square
+  - btn_replay
+  - btn_home
+  - popup_bg_02_square
+  - popup_btn_close_line
+  - popup_title_square_2
+  - popup_notice_icon_exclamation_mark
+  - bottom_shadow
+  - popup_notice_bg_red_rounded
+  - popup_stage_ready_rounded_1
+  - common_btn_color_green
+  - popup_bg_01_rounded
+  - popup_notice_bg_gray_square
+  - popup_notice_bg_red_square
+  - popup_notice_icon_lock
+  - popup_title_rounded_2
+  - popup_bg_02_rounded
+  - popup_notice_icon_skull
+  - popup_stage_ready_square_1
+  m_RenderDataMap: {}
+  m_Tag: Popup
+  m_IsVariant: 0

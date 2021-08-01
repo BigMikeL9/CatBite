@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!687078895 &4343727234628468602
+SpriteAtlas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Level_Up
+  m_EditorData:
+    serializedVersion: 2
+    textureSettings:
+      serializedVersion: 2
+      anisoLevel: 1
+      compressionQuality: 50
+      maxTextureSize: 2048
+      textureCompression: 0
+      filterMode: 1
+      generateMipMaps: 0
+      readable: 0
+      crunchedCompression: 0
+      sRGB: 1
+    platformSettings: []
+    packingSettings:
+      serializedVersion: 2
+      padding: 4
+      blockOffset: 1
+      allowAlphaSplitting: 0
+      enableRotation: 1
+      enableTightPacking: 0
+    secondaryTextureSettings: {}
+    variantMultiplier: 1
+    packables:
+    - {fileID: 102900000, guid: 5cb93e54afb5346c2b3fce189460c54f, type: 3}
+    totalSpriteSurfaceArea: 1985617
+    bindAsDefault: 1
+    isAtlasV2: 0
+    cachedData: {fileID: 0}
+  m_MasterAtlas: {fileID: 0}
+  m_PackedSprites:
+  - {fileID: 21300000, guid: e3924c82eabcc489382b1682ac414100, type: 3}
+  - {fileID: 21300000, guid: f740c5b40548444ac8b3c8a917137b56, type: 3}
+  - {fileID: 21300000, guid: 7d084315a9962486a81e1c77cdeedad9, type: 3}
+  - {fileID: 21300000, guid: f55270a5c483f4c84a0a7b278949e9a1, type: 3}
+  - {fileID: 21300000, guid: 290489b52bbbd4d96ab66330ca909ed8, type: 3}
+  - {fileID: 21300000, guid: b84cedb5b72664fc982d17646c5d4508, type: 3}
+  - {fileID: 21300000, guid: cab382e74d92847428bf992521e62999, type: 3}
+  - {fileID: 21300000, guid: 9199a0380f41046008b110e2030c8910, type: 3}
+  - {fileID: 21300000, guid: 7a89751ac25a84164b733ec74ecb0a5e, type: 3}
+  - {fileID: 21300000, guid: 10813f1c1196c462286ae599ab258ac9, type: 3}
+  - {fileID: 21300000, guid: 978ec76cd760a403a91a2f2406ffd8ec, type: 3}
+  - {fileID: 21300000, guid: 357b2bfc502bb42db96277ce20a5797f, type: 3}
+  - {fileID: 21300000, guid: fb05549d2ef24425c8704684822e084a, type: 3}
+  - {fileID: 21300000, guid: 1121ecbde68114860a2447ebd7cbf7b2, type: 3}
+  - {fileID: 21300000, guid: 26cb57eee077c4285a6ed8b4c05790b2, type: 3}
+  - {fileID: 21300000, guid: d233e04fcfa7c45899e0cfe45c5a2f2c, type: 3}
+  m_PackedSpriteNamesToIndex:
+  - levelup_particle_05
+  - levelup_particle_07
+  - levelup_particle_09
+  - levelup_unlocked_title
+  - levelup_effect_rotate
+  - levelup_particle_08
+  - levelup_item_hammer
+  - levelup_particle_01
+  - levelup_particle_10
+  - levelup_particle_04
+  - levelup_particle_06
+  - levelup_bg
+  - levelup_particle_03
+  - levelup_particle_02
+  - levelup_item_sword
+  - levelup_item_bomb
+  m_RenderDataMap: {}
+  m_Tag: Level_Up
+  m_IsVariant: 0
