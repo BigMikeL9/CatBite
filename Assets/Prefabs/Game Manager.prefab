@@ -43,8 +43,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a72c057151472524caeb06f6902f80be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfCats: 3
+  playerHealth: 3
+  maxNumOfHealth: 3
+  hearts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   scoreText: {fileID: 0}
   startingScore: 0
-  looseScreenCountDown: 8
+  looseScreenCountDown: 7
   levelButtons: []

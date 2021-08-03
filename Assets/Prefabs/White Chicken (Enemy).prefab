@@ -198,6 +198,6 @@ MonoBehaviour:
   jumpForce: 12
   chickenHealth: 5
   destroyDelay: 0.3
-  pushBackForce: 200
+  pushBackForce: 300
   leftBoxCollider: {fileID: 0}
   rightBoxCollider: {fileID: 0}

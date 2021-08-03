@@ -25,25 +25,22 @@ public class SceneController : MonoBehaviour
     }
     
     
-     public int GetNextSceneLoad()
-    {
-        return nextSceneLoad;
-    }
-    
     public void RestartLevel()
     {
         SceneManager.LoadScene(currentSceneIndex);
-        Destroy(gameObject); // Resets the GameManager Script
-        // Time.timeScale = 1;
+        Time.timeScale = 1;
     }
     
     
     public void LoadNextScene()
     {
         SceneManager.LoadScene(currentSceneIndex + 1);
-        // Time.timeScale = 1;
-        // Destroy(gameObject);
-
+        Time.timeScale = 1;
+    }
+    
+    public void LoadMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
     
     public void Quit()

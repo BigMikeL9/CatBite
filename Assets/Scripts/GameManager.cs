@@ -14,28 +14,33 @@ public class GameManager : MonoBehaviour
     // Configs 
     [Header("Health System")]
     [Tooltip("The max number of cats that will spawn in level.")]
-    [SerializeField] int numberOfCats = 3;
+    [SerializeField] int playerHealth = 3;
+    [SerializeField] int maxNumOfHealth = 3; // when this is equal to 3, I should have only 3 heart containers visible in my scene view
+    [SerializeField] Image[] hearts;
     
+    [Header("Level System")]
+    [SerializeField] float looseScreenCountDown = 3f;
+
     [Header("Score System")] 
     [SerializeField] TextMeshProUGUI scoreText;
     [SerializeField] int startingScore;
 
-    [Header("Level System")]
-    [SerializeField] float looseScreenCountDown = 3f;
-    [SerializeField] Button[] levelButtons;
-    
-    
+    [Header("Popup Canvases")] 
+    [SerializeField] GameObject winCanvas;
+    [SerializeField] GameObject looseCanvas;
+    [SerializeField] GameObject pauseCanvas;
+    [SerializeField] GameObject settingsCanvas;
     
     // Cache
     Enemy[] _enemies;
-    string CURRENT_LEVEL_KEY;
     CatHandler _catHandler;
     SceneController _sceneController;
-
+    LevelSelection _levelSelection;
 
     private void OnEnable()
     {
         _sceneController = FindObjectOfType<SceneController>();
+        _levelSelection = FindObjectOfType<LevelSelection>();
 
         // adds all the enemies in the scene to the "_enemies" array
         _enemies = FindObjectsOfType<Enemy>();
@@ -43,14 +48,13 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        SetupSingleton();
+        // SetupSingleton();
     }
 
     private void Start()
     {
         _catHandler = FindObjectOfType<CatHandler>();
-
-
+        
         // scoreText.text = startingScore.ToString();
     }
 
@@ -58,32 +62,49 @@ public class GameManager : MonoBehaviour
     {
         WinCondition();
         StartCoroutine(LoseCondition());
-        LevelSelectionSystem();
+        HeartsSystem();
     }
     
     
-    private void SetupSingleton()
-    {
-        int numOfGameSessions = FindObjectsOfType(GetType()).Length;
-
-        if (numOfGameSessions > 1)
-        {
-            gameObject.SetActive(false);
-            Destroy(gameObject);
-        }
-        else
-        {
-            DontDestroyOnLoad(gameObject);
-        }
-    }
+    // private void SetupSingleton()
+    // {
+    //     int numOfGameSessions = FindObjectsOfType(GetType()).Length;
+    //
+    //     if (numOfGameSessions > 1)
+    //     {
+    //         gameObject.SetActive(false);
+    //         Destroy(gameObject);
+    //     }
+    //     else
+    //     {
+    //         DontDestroyOnLoad(gameObject);
+    //     }
+    // }
 
     public void UpdateNumberOfCats()
     {
-        numberOfCats--;
+        playerHealth--;
 
-        if (numberOfCats <= 0)
+        if (playerHealth <= 0)
         {
             _catHandler.spawnCats = false;
+        }
+    }
+    
+    
+    private void HeartsSystem()
+    {
+        for (int i = 0; i < hearts.Length; i++)
+        {
+            if (i < playerHealth) /* controls how many hearts should be displayed in relation to
+                                       the max allowed health that the player can have */
+            {                       
+                hearts[i].enabled = true;  
+            }
+            else
+            {
+                hearts[i].enabled = false; // This hides any extra hearts in the array that we have, that is more than maxNumOfHealth.
+            }
         }
     }
     
@@ -106,7 +127,7 @@ public class GameManager : MonoBehaviour
     
     private void WinCondition()
     {
-        if (AllEnemiesDead() && numberOfCats >= 0)
+        if (AllEnemiesDead() && playerHealth >= 0)
         {
             if (_sceneController.GetCurrentSceneIndex() == 10) // MAX LEVEL
             {
@@ -116,58 +137,36 @@ public class GameManager : MonoBehaviour
             else
             {
                 Debug.Log("You Won the level!!");
-                // Time.timeScale = 0;
-                UpdateCurrentLevelPlayerPref();
-                // Show win screen with next level button
+                Time.timeScale = 0;
+                _levelSelection.UpdateCurrentLevelPlayerPref();
+                winCanvas.SetActive(true);
             }
         }
     }
     
     IEnumerator LoseCondition()
     {
-        if (!AllEnemiesDead() && numberOfCats <= 0)
+        if (!AllEnemiesDead() && playerHealth <= 0)
         {
             yield return new WaitForSeconds(looseScreenCountDown);
             Debug.Log("YOU LOOOOSEE");
-            // Time.timeScale = 0;
-            // SHOW LOse screen with restart level button
-        }
-    }
-
-
-    // Updates the PlayerPrefs value, depending on what level we are at.
-    private void UpdateCurrentLevelPlayerPref() // there might be a bug here **********************
-    {
-        if (_sceneController.GetCurrentSceneIndex() > PlayerPrefs.GetInt(CURRENT_LEVEL_KEY))
-        {
-            PlayerPrefs.SetInt(CURRENT_LEVEL_KEY, _sceneController.GetCurrentSceneIndex());
+            Time.timeScale = 0;
+            looseCanvas.SetActive(true);
         }
     }
     
-    // Makes buttons interactable, depending on what level we are in.
-    private void LevelSelectionSystem()
+    public void PauseGame()
     {
-        // Change the int value to whatever your level selection build index is on your build settings 
-        int levelAt = PlayerPrefs.GetInt(CURRENT_LEVEL_KEY, 2); 
-        
-        for (int i = 0; i < levelButtons.Length; i++) 
-        {
-            // if 
-            if (i + 3 > levelAt) 
-            {
-                levelButtons[i].interactable = false;
-            }
-        }
+        pauseCanvas.SetActive(true);
+        Time.timeScale = 0;
     }
     
-    // Resets PlayerPrefs to default value. Deletes all saved progress
-    private void DeletePlayerPrefs() // Might use this later
+    public void ContinueGame()
     {
-        if (true) // A Reset Game button is pressed or the player finishes the game
-        {
-            PlayerPrefs.DeleteAll();
-        }
+        pauseCanvas.SetActive(false);
+        Time.timeScale = 1;
     }
+    
     
     public void ScoreUpdate(int scoreValue)
     {

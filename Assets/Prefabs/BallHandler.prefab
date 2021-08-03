@@ -48,3 +48,4 @@ MonoBehaviour:
   detachBallDelay: 0.15
   spawnDelay: 2
   maxDragDistance: 5
+  spawnCats: 1

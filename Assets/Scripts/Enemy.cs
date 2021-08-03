@@ -83,8 +83,8 @@ public class Enemy : MonoBehaviour
         chickenHealth -= damageAmount;
         enemySpeed = -enemySpeed;
         // pushes chicken away from cat, on hit
-        Vector2 awayFromCat = (transform.position - _cat.transform.position).normalized;
-        _rigidbody2D.AddForce(awayFromCat * pushBackForce);
+        // Vector2 awayFromCat = (transform.position - _cat.transform.position).normalized;
+        // _rigidbody2D.AddForce(awayFromCat * pushBackForce);
     }
 
 
