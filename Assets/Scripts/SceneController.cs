@@ -27,15 +27,15 @@ public class SceneController : MonoBehaviour
     
     public void RestartLevel()
     {
+        // Time.timeScale = 1;
         SceneManager.LoadScene(currentSceneIndex);
-        Time.timeScale = 1;
     }
     
     
     public void LoadNextScene()
     {
-        SceneManager.LoadScene(currentSceneIndex + 1);
         Time.timeScale = 1;
+        SceneManager.LoadScene(currentSceneIndex + 1);
     }
     
     public void LoadMainMenu()

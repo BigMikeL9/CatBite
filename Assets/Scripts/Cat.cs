@@ -160,7 +160,7 @@ public class Cat : MonoBehaviour
    
    private void FlipSprite()
    {
-      if (_isMoving && _nearestEnemy != null)
+      if (_isMoving)
       {
          // gets the position of the cat in local space, relative to the closest enemy
          Vector3 relativePoint = transform.InverseTransformPoint(_nearestEnemy.transform.position);

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2526875108924724021}
   - component: {fileID: 2526875108924724020}
   m_Layer: 0
-  m_Name: BallHandler
+  m_Name: CatHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,5 +47,5 @@ MonoBehaviour:
   pivotPoint: {fileID: 0}
   detachBallDelay: 0.15
   spawnDelay: 2
-  maxDragDistance: 5
+  maxDragDistance: 4
   spawnCats: 1
