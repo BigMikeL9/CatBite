@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelSelection : MonoBehaviour
 {
@@ -11,12 +12,14 @@ public class LevelSelection : MonoBehaviour
     [SerializeField] Button[] levelButtons;
     
     // Cache
-    string CURRENT_LEVEL_KEY;
-    SceneController _sceneController;
+    string CURRENT_LEVEL_KEY = "levelAt";
+    int _nextSceneLoad;
 
     private void Start()
     {
-        _sceneController = FindObjectOfType<SceneController>();
+        _nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
+        Time.timeScale = 1;
+        Debug.Log("Timescale is: " + Time.timeScale);
     }
 
     private void Update()
@@ -28,12 +31,12 @@ public class LevelSelection : MonoBehaviour
     private void LevelSelectionSystem()
     {
         // Change the int value to whatever your level selection build index is on your build settings 
-        int levelAt = PlayerPrefs.GetInt(CURRENT_LEVEL_KEY, 2); 
+        int levelAt = PlayerPrefs.GetInt(CURRENT_LEVEL_KEY, 2); // default value was 2
         
         for (int i = 0; i < levelButtons.Length; i++) 
         {
             // if 
-            if (i + 3 > levelAt) 
+            if (i + 2 > levelAt) 
             {
                 levelButtons[i].interactable = false;
             }
@@ -41,21 +44,19 @@ public class LevelSelection : MonoBehaviour
     }
     
     // Updates the PlayerPrefs value, depending on what level we are at.
-    public void UpdateCurrentLevelPlayerPref() // there might be a bug here **********************
+    public void UpdateCurrentLevelPlayerPref() 
     {
-        if (_sceneController.GetCurrentSceneIndex() > PlayerPrefs.GetInt(CURRENT_LEVEL_KEY))
+        if (_nextSceneLoad > PlayerPrefs.GetInt(CURRENT_LEVEL_KEY))
         {
-            PlayerPrefs.SetInt(CURRENT_LEVEL_KEY, _sceneController.GetCurrentSceneIndex());
+            PlayerPrefs.SetInt(CURRENT_LEVEL_KEY, _nextSceneLoad);
         }
     }
     
     
     // Resets PlayerPrefs to default value. Deletes all saved progress
-    private void DeletePlayerPrefs() // Might use this later
+    public void ResetPlayerPrefs() // Might use this later
     {
-        if (true) // A Reset Game button is pressed or the player finishes the game
-        {
-            PlayerPrefs.DeleteAll();
-        }
+        // A Reset Game button is pressed or the player finishes the game
+        PlayerPrefs.DeleteAll();
     }
 }

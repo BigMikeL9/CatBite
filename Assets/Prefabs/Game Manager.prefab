@@ -52,7 +52,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  looseScreenCountDown: 7
   scoreText: {fileID: 0}
   startingScore: 0
-  looseScreenCountDown: 7
-  levelButtons: []
+  winCanvas: {fileID: 0}
+  looseCanvas: {fileID: 0}
+  pauseCanvas: {fileID: 0}
+  settingsCanvas: {fileID: 0}
+  timeScaleToZeroDelay: 1.1
+  winAnimator: {fileID: 0}

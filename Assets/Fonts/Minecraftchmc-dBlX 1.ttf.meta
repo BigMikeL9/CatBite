@@ -1,21 +1,22 @@
 fileFormatVersion: 2
-guid: 1af1dfd4401dd45f48aaccb0c45b5a92
-timeCreated: 1505370508
-licenseType: Store
+guid: 78eb165855029ad4dbd1104a43d604b6
 TrueTypeFontImporter:
+  externalObjects: {}
   serializedVersion: 4
   fontSize: 16
   forceTextureCase: -2
   characterSpacing: 0
   characterPadding: 1
   includeFontData: 1
-  fontName: Bungee
   fontNames:
-  - Bungee
-  fallbackFontReferences: []
+  - MinecraftCHMC
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 0f50367c5912f474698b9a1361b8ed31, type: 3}
   customCharacters: 
   fontRenderingMode: 0
   ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
   userData: 
   assetBundleName: 
   assetBundleVariant: 

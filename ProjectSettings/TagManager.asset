@@ -49,3 +49,6 @@ TagManager:
   - name: Front
     uniqueID: 252540755
     locked: 0
+  - name: Scene Transition Screen
+    uniqueID: 1852508815
+    locked: 0

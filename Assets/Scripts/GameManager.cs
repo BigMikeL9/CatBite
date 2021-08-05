@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class GameManager : MonoBehaviour
@@ -30,26 +31,30 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject looseCanvas;
     [SerializeField] GameObject pauseCanvas;
     [SerializeField] GameObject settingsCanvas;
+
+    [Header("Popup Canvases Transitions")]
+    [SerializeField] float timeScaleToZeroDelay = 1.1f;
+    [SerializeField] Animator winAnimator;
+     
     
     // Cache
     Enemy[] _enemies;
     CatHandler _catHandler;
     SceneController _sceneController;
     LevelSelection _levelSelection;
+    int _currentSceneIndex;
 
     private void OnEnable()
     {
         _sceneController = FindObjectOfType<SceneController>();
         _levelSelection = FindObjectOfType<LevelSelection>();
+        
+        _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         // adds all the enemies in the scene to the "_enemies" array
         _enemies = FindObjectsOfType<Enemy>();
     }
-
-    private void Awake()
-    {
-        // SetupSingleton();
-    }
+    
 
     private void Start()
     {
@@ -65,21 +70,6 @@ public class GameManager : MonoBehaviour
         HeartsSystem();
     }
     
-    
-    // private void SetupSingleton()
-    // {
-    //     int numOfGameSessions = FindObjectsOfType(GetType()).Length;
-    //
-    //     if (numOfGameSessions > 1)
-    //     {
-    //         gameObject.SetActive(false);
-    //         Destroy(gameObject);
-    //     }
-    //     else
-    //     {
-    //         DontDestroyOnLoad(gameObject);
-    //     }
-    // }
 
     public void UpdateNumberOfCats()
     {
@@ -129,7 +119,7 @@ public class GameManager : MonoBehaviour
     {
         if (AllEnemiesDead() && playerHealth >= 0)
         {
-            if (_sceneController.GetCurrentSceneIndex() == 10) // MAX LEVEL
+            if (_currentSceneIndex == 10) // MAX LEVEL
             {
                 Debug.Log("YOU WON THE GAAAAMEE!");
                 // Show Win game screen or more coming soon screen
@@ -137,11 +127,18 @@ public class GameManager : MonoBehaviour
             else
             {
                 Debug.Log("You Won the level!!");
-                Time.timeScale = 0;
                 _levelSelection.UpdateCurrentLevelPlayerPref();
                 winCanvas.SetActive(true);
+                StartCoroutine(SetTimeScaleToZero());
             }
         }
+    }
+    
+    // This method will be used to set Timescale to 0 at the end popup canvases transitions, in the ANIMATOR
+    IEnumerator SetTimeScaleToZero()
+    {
+        yield return new WaitForSeconds(timeScaleToZeroDelay);
+        Time.timeScale = 0;
     }
     
     IEnumerator LoseCondition()
@@ -153,6 +150,12 @@ public class GameManager : MonoBehaviour
             Time.timeScale = 0;
             looseCanvas.SetActive(true);
         }
+    }
+    
+    public void ScoreUpdate(int scoreValue)
+    {
+        startingScore += scoreValue;
+        scoreText.text = startingScore.ToString();
     }
     
     public void PauseGame()
@@ -167,10 +170,4 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
     
-    
-    public void ScoreUpdate(int scoreValue)
-    {
-        startingScore += scoreValue;
-        scoreText.text = startingScore.ToString();
-    }
 }

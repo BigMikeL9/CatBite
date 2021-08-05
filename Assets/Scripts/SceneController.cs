@@ -7,35 +7,58 @@ using UnityEngine.SceneManagement;
 public class SceneController : MonoBehaviour
 {
     
+    // Configs
+    [SerializeField] Animator animator;
+    [SerializeField] float sceneTransitionTimer = 1f;
+    
     // Cache
-    int currentSceneIndex;
-    int nextSceneLoad;
-
-
-   
+    int _currentSceneIndex;
+    
+    
     private void Start()
     {
-        currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
+        _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        Time.timeScale = 1;
     }
-
-    public int GetCurrentSceneIndex()
-    {
-        return currentSceneIndex;
-    }
+    
+    //
+    // private void SetUpSingleton()
+    // {
+    //     var numOfSceneController = FindObjectsOfType(GetType()).Length;
+    //
+    //     if (numOfSceneController > 1)
+    //     {
+    //         gameObject.SetActive(false);
+    //         Destroy(gameObject);
+    //     }
+    //     else
+    //     {
+    //         DontDestroyOnLoad(gameObject);
+    //     }
+    // }
     
     
     public void RestartLevel()
     {
-        // Time.timeScale = 1;
-        SceneManager.LoadScene(currentSceneIndex);
+        Time.timeScale = 1;
+        SceneManager.LoadScene(_currentSceneIndex);
     }
     
     
     public void LoadNextScene()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene(currentSceneIndex + 1);
+        StartCoroutine(LoadLevel(_currentSceneIndex + 1));
+    }
+
+    IEnumerator LoadLevel(int sceneIndex)
+    {
+        // Play Animation
+        animator.SetTrigger("Start");
+        // Wait 
+        yield return new WaitForSeconds(sceneTransitionTimer);
+        // Load Scene
+        SceneManager.LoadScene(sceneIndex);
     }
     
     public void LoadMainMenu()
@@ -47,4 +70,6 @@ public class SceneController : MonoBehaviour
     {
         Application.Quit();
     }
+    
+    
 }
