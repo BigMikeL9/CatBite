@@ -7,13 +7,19 @@ using UnityEngine;
 public class Cat : MonoBehaviour
 {
    // Config
-   [Header("Cat Configs")]
+   [Header("Cat Physics Configs")]
    [SerializeField] float speed = 5f;
    [SerializeField] float jumpForce = 10f;
    [SerializeField] float minDistanceToMoveToward = 5f;
-   [SerializeField] int enemyValue = 100;
+   // [SerializeField] int enemyValue = 100;
    
+   [Header("Cat Audio Configs")] 
+   [SerializeField] AudioClip spawnMeowSFX;
+   [SerializeField] AudioClip releaseMeowSFX;
+   [SerializeField] [Range(0, 1)] private float meowSFXVolume;
 
+   
+   
    // States
    bool _isMoving;
    bool _isTouchingChicken;
@@ -27,8 +33,10 @@ public class Cat : MonoBehaviour
    PolygonCollider2D _bodyCollider;
    CircleCollider2D _jumpDetectionCollider;
    Animator _animator;
+   AudioSource _audioSource;
+   
    float _distance;
-   GameManager _gameManager;
+   
 
    private void Start()
    {
@@ -37,13 +45,16 @@ public class Cat : MonoBehaviour
       _bodyCollider = GetComponent<PolygonCollider2D>();
       _jumpDetectionCollider = GetComponent<CircleCollider2D>();
       _animator = GetComponent<Animator>();
+      _audioSource = GetComponent<AudioSource>();
 
-      _gameManager = FindObjectOfType<GameManager>();
       _enemies = FindObjectsOfType<Enemy>();
 
       _startingPoistion = transform.position;
+      
+      _audioSource.PlayOneShot(spawnMeowSFX, meowSFXVolume);
    }
-
+   
+   
    private void Update()
    {
       AimIndicator();
@@ -124,14 +135,14 @@ public class Cat : MonoBehaviour
    }
 
    
-   public bool IsEnemyClose()
-   {
-      if (_nearestEnemy != null)
-      {
-         return true;
-      }
-      return true;
-   }
+   // public bool IsEnemyClose()
+   // {
+   //    if (_nearestEnemy != null)
+   //    {
+   //       return true;
+   //    }
+   //    return true;
+   // }
    
    // This method is called by an Animation Event
    public void Attack(int damage)
@@ -153,8 +164,6 @@ public class Cat : MonoBehaviour
       if (!isTouchingObstacle) { return; }
         
       _rigidbody2D.AddForce(Vector2.up * jumpForce);
-     
-      
    }
    
    
@@ -172,6 +181,11 @@ public class Cat : MonoBehaviour
             transform.localScale = new Vector3(Mathf.Sign(relativePoint.x), 1f);
          }
       }
+   }
+   
+   public void PlayCatReleaseSFX()
+   {
+      _audioSource.PlayOneShot(releaseMeowSFX, meowSFXVolume);
    }
 
 }

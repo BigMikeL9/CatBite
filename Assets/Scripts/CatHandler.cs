@@ -9,11 +9,13 @@ using Cinemachine;
 public class CatHandler : MonoBehaviour
 {
     // Configs
+    [Header("Cat Spawn Configs")]
     [SerializeField] GameObject catPrefab;
     [SerializeField] Rigidbody2D pivotPoint;
     [SerializeField] float detachBallDelay = 1f;
     [SerializeField] float spawnDelay = 1f;
     [SerializeField] float maxDragDistance = 2f;
+    
 
     // states
     bool isDragging;
@@ -29,7 +31,7 @@ public class CatHandler : MonoBehaviour
     private void Start()
     {
         RespawnCat();
-
+        
         _gameManager = FindObjectOfType<GameManager>();
         _camera = Camera.main;
     }
@@ -114,6 +116,7 @@ public class CatHandler : MonoBehaviour
         // spawns the ball after it launches; after a delay
         Invoke(nameof(RespawnCat), spawnDelay);
         
+        FindObjectOfType<Cat>().PlayCatReleaseSFX();
     }
 
     private void RespawnCat()
@@ -123,7 +126,7 @@ public class CatHandler : MonoBehaviour
         if (spawnCats)
         {
             _catInstance = Instantiate(catPrefab, pivotPoint.position, Quaternion.identity);
-
+            
 
             // sets the rb to be equal to that of the instantiated ball's rb.
             _currentBallRb = _catInstance.GetComponent<Rigidbody2D>();
@@ -132,5 +135,6 @@ public class CatHandler : MonoBehaviour
             // this line will attach the ball to the pivot
             _currentBallSj.connectedBody = pivotPoint;
         }
+        
     }
 }

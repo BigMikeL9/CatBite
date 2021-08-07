@@ -12,14 +12,19 @@ public class Enemy : MonoBehaviour
     [SerializeField] float maxChickenSpeed;
     [SerializeField] float enemySpeed = 1.3f;
     [SerializeField] float jumpForce = 10f;
+    [SerializeField] int hitJumpForce = 5;
     [SerializeField] int chickenHealth = 2;
     [SerializeField] float destroyDelay= 0.3f;
-    [SerializeField] int pushBackForce = 200;
 
-
-    [Header("Boundaries")]
+    [Header("Chicken Boundaries")]
     [SerializeField] GameObject leftBoxCollider;
     [SerializeField] GameObject rightBoxCollider;
+
+    [Header("Chicken SFX")] 
+    [SerializeField] AudioClip idleSFX;
+    [SerializeField] AudioClip hitSFX;
+    [SerializeField] [Range(0, 1)] float chickenSFXVolume;
+    
     
     // States
     bool isGoingLeft;
@@ -30,14 +35,18 @@ public class Enemy : MonoBehaviour
     PolygonCollider2D _bodyCollider;
     CircleCollider2D _jumpDetectionCollider;
     Cat _cat;
+    private AudioSource _audioSource;
 
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
         _bodyCollider = GetComponent<PolygonCollider2D>();
         _jumpDetectionCollider = GetComponent<CircleCollider2D>();
-        
+        _audioSource = GetComponent<AudioSource>();
+
         _cat = FindObjectOfType<Cat>();
+        
+        // _audioSource.PlayOneShot(idleSFX, chickenSFXVolume);
     }
 
 
@@ -82,9 +91,9 @@ public class Enemy : MonoBehaviour
     {
         chickenHealth -= damageAmount;
         enemySpeed = -enemySpeed;
-        // pushes chicken away from cat, on hit
-        // Vector2 awayFromCat = (transform.position - _cat.transform.position).normalized;
-        // _rigidbody2D.AddForce(awayFromCat * pushBackForce);
+        // chicken jump on hit
+        _rigidbody2D.velocity += new Vector2(0f, hitJumpForce);
+        _audioSource.PlayOneShot(hitSFX, chickenSFXVolume);
     }
 
 

@@ -32,9 +32,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject pauseCanvas;
     [SerializeField] GameObject settingsCanvas;
 
-    [Header("Popup Canvases Transitions")]
+    [Header("Popup Canvases Transitions")] // delete later
     [SerializeField] float timeScaleToZeroDelay = 1.1f;
     [SerializeField] Animator winAnimator;
+    [SerializeField] Animator loseAnimator;
      
     
     // Cache
