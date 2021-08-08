@@ -35,6 +35,7 @@ public class Enemy : MonoBehaviour
     PolygonCollider2D _bodyCollider;
     CircleCollider2D _jumpDetectionCollider;
     Cat _cat;
+    Camera _camera;
     private AudioSource _audioSource;
 
     private void Start()
@@ -45,15 +46,19 @@ public class Enemy : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
 
         _cat = FindObjectOfType<Cat>();
+        _camera = Camera.main;
         
         // _audioSource.PlayOneShot(idleSFX, chickenSFXVolume);
     }
 
-
-    private void Update()
+    private void FixedUpdate()
     {
         EnemyMove();
         JumpOverObstacle();
+    }
+
+    private void Update()
+    {
         FlipSprite();
         Die();
     }
@@ -93,7 +98,7 @@ public class Enemy : MonoBehaviour
         enemySpeed = -enemySpeed;
         // chicken jump on hit
         _rigidbody2D.velocity += new Vector2(0f, hitJumpForce);
-        _audioSource.PlayOneShot(hitSFX, chickenSFXVolume);
+        AudioSource.PlayClipAtPoint(hitSFX, _camera.transform.position, chickenSFXVolume);
     }
 
 
@@ -123,5 +128,4 @@ public class Enemy : MonoBehaviour
             enemySpeed = -enemySpeed; // Controls the chicken move direction
         }
     }
-    
 }

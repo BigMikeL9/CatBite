@@ -101,7 +101,6 @@ public class Cat : MonoBehaviour
          {
             return;
          }
-         
       }
    }
    
@@ -133,16 +132,7 @@ public class Cat : MonoBehaviour
       // Running Animation
       _animator.SetBool("isRunning", _isMoving);
    }
-
    
-   // public bool IsEnemyClose()
-   // {
-   //    if (_nearestEnemy != null)
-   //    {
-   //       return true;
-   //    }
-   //    return true;
-   // }
    
    // This method is called by an Animation Event
    public void Attack(int damage)

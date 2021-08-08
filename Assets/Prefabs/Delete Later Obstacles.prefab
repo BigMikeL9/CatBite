@@ -14,7 +14,7 @@ GameObject:
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
+  m_StaticEditorFlags: 4294967295
   m_IsActive: 1
 --- !u!4 &1105432934977192335
 Transform:
@@ -95,6 +95,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Traffic Light (Yellow)
       objectReference: {fileID: 0}
+    - target: {fileID: 656756469918892086, guid: e9443a1ef628a1b4296b0ee576253dc0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 656756469918892087, guid: e9443a1ef628a1b4296b0ee576253dc0, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -156,6 +160,10 @@ PrefabInstance:
     - target: {fileID: 534781996247039104, guid: 8bc602d1d511f714192298d1a6e686de, type: 3}
       propertyPath: m_Name
       value: Fence - 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 534781996247039104, guid: 8bc602d1d511f714192298d1a6e686de, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 534781996247039111, guid: 8bc602d1d511f714192298d1a6e686de, type: 3}
       propertyPath: m_RootOrder
@@ -263,6 +271,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Garbage - 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2304013904855744198, guid: 8b9438d6c00ec75469acfdf9d9b789b5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b9438d6c00ec75469acfdf9d9b789b5, type: 3}
 --- !u!4 &1105432935320334060 stripped
@@ -280,6 +292,10 @@ PrefabInstance:
     - target: {fileID: 2036889221299943300, guid: d047695d6fd216b47b75d1cad1390edf, type: 3}
       propertyPath: m_Name
       value: Garbage Big
+      objectReference: {fileID: 0}
+    - target: {fileID: 2036889221299943300, guid: d047695d6fd216b47b75d1cad1390edf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2036889221299943306, guid: d047695d6fd216b47b75d1cad1390edf, type: 3}
       propertyPath: m_RootOrder
@@ -342,6 +358,10 @@ PrefabInstance:
     - target: {fileID: 1949182391174154086, guid: e0c876ab6428dce499bef94c43ac1ad8, type: 3}
       propertyPath: m_Name
       value: Pot
+      objectReference: {fileID: 0}
+    - target: {fileID: 1949182391174154086, guid: e0c876ab6428dce499bef94c43ac1ad8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 1949182391174154087, guid: e0c876ab6428dce499bef94c43ac1ad8, type: 3}
       propertyPath: m_RootOrder
@@ -449,6 +469,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cone
       objectReference: {fileID: 0}
+    - target: {fileID: 1591599247985645691, guid: de3227f8a3e29364497254aedb243846, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: de3227f8a3e29364497254aedb243846, type: 3}
 --- !u!4 &1105432935302652574 stripped
@@ -466,6 +490,10 @@ PrefabInstance:
     - target: {fileID: 1540248655583175586, guid: e2c55fe5de107a24e9331be03316a024, type: 3}
       propertyPath: m_Name
       value: Lamp - 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1540248655583175586, guid: e2c55fe5de107a24e9331be03316a024, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 1540248655583175589, guid: e2c55fe5de107a24e9331be03316a024, type: 3}
       propertyPath: m_RootOrder
@@ -528,6 +556,10 @@ PrefabInstance:
     - target: {fileID: 1369286697351323345, guid: b84d858342d619346a28a75cbab71fd9, type: 3}
       propertyPath: m_Name
       value: Garbage Can
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369286697351323345, guid: b84d858342d619346a28a75cbab71fd9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 1369286697351323351, guid: b84d858342d619346a28a75cbab71fd9, type: 3}
       propertyPath: m_RootOrder
@@ -635,6 +667,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door
       objectReference: {fileID: 0}
+    - target: {fileID: 3222787941975591439, guid: 2a908a22fc1fbc647b3c92d6d70adfea, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a908a22fc1fbc647b3c92d6d70adfea, type: 3}
 --- !u!4 &1105432935662123563 stripped
@@ -697,6 +733,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Garbage Open
       objectReference: {fileID: 0}
+    - target: {fileID: 3060612613678729855, guid: f5faf0f8359167740b2e59832242905c, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5faf0f8359167740b2e59832242905c, type: 3}
 --- !u!4 &1105432935645204562 stripped
@@ -714,6 +754,10 @@ PrefabInstance:
     - target: {fileID: 2762385787285942924, guid: 4e7535d14b5e66f459c6969c84df8caf, type: 3}
       propertyPath: m_Name
       value: Bench
+      objectReference: {fileID: 0}
+    - target: {fileID: 2762385787285942924, guid: 4e7535d14b5e66f459c6969c84df8caf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2762385787285942925, guid: 4e7535d14b5e66f459c6969c84df8caf, type: 3}
       propertyPath: m_RootOrder
@@ -821,6 +865,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Traffic Sign - 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2661561658510636013, guid: e14bf21697c523b428c84657c32b3e00, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e14bf21697c523b428c84657c32b3e00, type: 3}
 --- !u!4 &1105432934694492700 stripped
@@ -883,6 +931,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Garbage - 3
       objectReference: {fileID: 0}
+    - target: {fileID: 2400881707527784469, guid: 6f6f3568782e06544821d2c743096109, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f6f3568782e06544821d2c743096109, type: 3}
 --- !u!4 &1105432934831293539 stripped
@@ -900,6 +952,10 @@ PrefabInstance:
     - target: {fileID: 2435879597591867888, guid: b951040c789923441bc51efa8e2ee148, type: 3}
       propertyPath: m_Name
       value: Lamp Post
+      objectReference: {fileID: 0}
+    - target: {fileID: 2435879597591867888, guid: b951040c789923441bc51efa8e2ee148, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 2435879597591867891, guid: b951040c789923441bc51efa8e2ee148, type: 3}
       propertyPath: m_RootOrder
@@ -1007,6 +1063,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Window Small
       objectReference: {fileID: 0}
+    - target: {fileID: 4415874206663108647, guid: 0f26516bed19a304da8e4bfb08b4328e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f26516bed19a304da8e4bfb08b4328e, type: 3}
 --- !u!4 &1105432934502642461 stripped
@@ -1024,6 +1084,10 @@ PrefabInstance:
     - target: {fileID: 4124960293464123926, guid: 3e916b31d68086d4f83be97dd5c52f1e, type: 3}
       propertyPath: m_Name
       value: Cone Fallen
+      objectReference: {fileID: 0}
+    - target: {fileID: 4124960293464123926, guid: 3e916b31d68086d4f83be97dd5c52f1e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 4124960293464123927, guid: 3e916b31d68086d4f83be97dd5c52f1e, type: 3}
       propertyPath: m_RootOrder
@@ -1131,6 +1195,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant -3
       objectReference: {fileID: 0}
+    - target: {fileID: 4043613020298164190, guid: b2a657300333eb540a23236b341379e8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b2a657300333eb540a23236b341379e8, type: 3}
 --- !u!4 &1105432935242039068 stripped
@@ -1192,6 +1260,10 @@ PrefabInstance:
     - target: {fileID: 3863112726277957495, guid: f63f0beb01bd8764d811b00f72e2e449, type: 3}
       propertyPath: m_Name
       value: Car
+      objectReference: {fileID: 0}
+    - target: {fileID: 3863112726277957495, guid: f63f0beb01bd8764d811b00f72e2e449, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f63f0beb01bd8764d811b00f72e2e449, type: 3}
@@ -1255,6 +1327,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Car Old
       objectReference: {fileID: 0}
+    - target: {fileID: 3718934405347465835, guid: eed093c230a431747a6009cce8a6d98a, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eed093c230a431747a6009cce8a6d98a, type: 3}
 --- !u!4 &1105432935480579169 stripped
@@ -1272,6 +1348,10 @@ PrefabInstance:
     - target: {fileID: 3523397519830909385, guid: baa3b291a0b6ea84ca3b778766396d44, type: 3}
       propertyPath: m_Name
       value: Plant
+      objectReference: {fileID: 0}
+    - target: {fileID: 3523397519830909385, guid: baa3b291a0b6ea84ca3b778766396d44, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3523397519830909386, guid: baa3b291a0b6ea84ca3b778766396d44, type: 3}
       propertyPath: m_RootOrder
@@ -1334,6 +1414,10 @@ PrefabInstance:
     - target: {fileID: 3495717495184593731, guid: b72ae42fb0018334d9a79341ee2115f4, type: 3}
       propertyPath: m_Name
       value: Barrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3495717495184593731, guid: b72ae42fb0018334d9a79341ee2115f4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 3495717495184593732, guid: b72ae42fb0018334d9a79341ee2115f4, type: 3}
       propertyPath: m_RootOrder
@@ -1441,6 +1525,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Traffic Sign - 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5692603956793998479, guid: d9e09e22ba7d07b45990301e036e260b, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9e09e22ba7d07b45990301e036e260b, type: 3}
 --- !u!4 &1105432935976402726 stripped
@@ -1458,6 +1546,10 @@ PrefabInstance:
     - target: {fileID: 5757903532579313425, guid: 0e179e3895c5ad84082146e35c2d2de7, type: 3}
       propertyPath: m_Name
       value: Welcome Billboard
+      objectReference: {fileID: 0}
+    - target: {fileID: 5757903532579313425, guid: 0e179e3895c5ad84082146e35c2d2de7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5757903532579313439, guid: 0e179e3895c5ad84082146e35c2d2de7, type: 3}
       propertyPath: m_RootOrder
@@ -1520,6 +1612,10 @@ PrefabInstance:
     - target: {fileID: 5467055716332994946, guid: 0c51b2a982cafd44d9edbb2eba4927cd, type: 3}
       propertyPath: m_Name
       value: Sign
+      objectReference: {fileID: 0}
+    - target: {fileID: 5467055716332994946, guid: 0c51b2a982cafd44d9edbb2eba4927cd, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5467055716332994947, guid: 0c51b2a982cafd44d9edbb2eba4927cd, type: 3}
       propertyPath: m_RootOrder
@@ -1627,6 +1723,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp - 2
       objectReference: {fileID: 0}
+    - target: {fileID: 5459570819222863598, guid: 4cd5e1a0ca8afca40851be60cb77b3a2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cd5e1a0ca8afca40851be60cb77b3a2, type: 3}
 --- !u!4 &1105432935346793018 stripped
@@ -1644,6 +1744,10 @@ PrefabInstance:
     - target: {fileID: 5202691129141629313, guid: db2da60206b0a06499c5567af3680266, type: 3}
       propertyPath: m_Name
       value: Hotel Sign - 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5202691129141629313, guid: db2da60206b0a06499c5567af3680266, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5202691129141629319, guid: db2da60206b0a06499c5567af3680266, type: 3}
       propertyPath: m_RootOrder
@@ -1706,6 +1810,10 @@ PrefabInstance:
     - target: {fileID: 5018521596121253309, guid: 17f93240266a7ae4c97d9b0a6c2a26db, type: 3}
       propertyPath: m_Name
       value: Traffic Sign - 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5018521596121253309, guid: 17f93240266a7ae4c97d9b0a6c2a26db, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5018521596121253311, guid: 17f93240266a7ae4c97d9b0a6c2a26db, type: 3}
       propertyPath: m_RootOrder
@@ -1813,6 +1921,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Stop Sign
       objectReference: {fileID: 0}
+    - target: {fileID: 4874817712710942483, guid: b3d38d841b4fd3349a550d33aab9e072, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b3d38d841b4fd3349a550d33aab9e072, type: 3}
 --- !u!4 &1105432934676042344 stripped
@@ -1874,6 +1986,10 @@ PrefabInstance:
     - target: {fileID: 4790980262847901177, guid: 41b018a41dc35e244af3b65f74d037aa, type: 3}
       propertyPath: m_Name
       value: Warning Post
+      objectReference: {fileID: 0}
+    - target: {fileID: 4790980262847901177, guid: 41b018a41dc35e244af3b65f74d037aa, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41b018a41dc35e244af3b65f74d037aa, type: 3}
@@ -1937,6 +2053,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hydrant
       objectReference: {fileID: 0}
+    - target: {fileID: 5270786109652035119, guid: 23b23cf206e152742897c8363b816dbb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 23b23cf206e152742897c8363b816dbb, type: 3}
 --- !u!4 &359780658059790103 stripped
@@ -1998,6 +2118,10 @@ PrefabInstance:
     - target: {fileID: 6623620350795381863, guid: 11b2bf24f734969499f90457e6f3beff, type: 3}
       propertyPath: m_Name
       value: Traffic Light (Green)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6623620350795381863, guid: 11b2bf24f734969499f90457e6f3beff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 11b2bf24f734969499f90457e6f3beff, type: 3}
@@ -2061,6 +2185,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Electric Poll
       objectReference: {fileID: 0}
+    - target: {fileID: 6480701558663595047, guid: 849706bf492fee144ae8a5c4cee89f4e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 849706bf492fee144ae8a5c4cee89f4e, type: 3}
 --- !u!4 &1105432934791619719 stripped
@@ -2078,6 +2206,10 @@ PrefabInstance:
     - target: {fileID: 6368735513654517786, guid: b409a3248d83dfb4fbb3514583b553c5, type: 3}
       propertyPath: m_Name
       value: Vending Machine
+      objectReference: {fileID: 0}
+    - target: {fileID: 6368735513654517786, guid: b409a3248d83dfb4fbb3514583b553c5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6368735513654517789, guid: b409a3248d83dfb4fbb3514583b553c5, type: 3}
       propertyPath: m_RootOrder
@@ -2141,6 +2273,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Plant Big
       objectReference: {fileID: 0}
+    - target: {fileID: 6327749763739128156, guid: e774c98718b047c49a967036953a85d9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6327749763739128157, guid: e774c98718b047c49a967036953a85d9, type: 3}
       propertyPath: m_RootOrder
       value: 20
@@ -2202,6 +2338,10 @@ PrefabInstance:
     - target: {fileID: 5826589328183899219, guid: 5f087721d8ea4744a895da955b32f4f4, type: 3}
       propertyPath: m_Name
       value: Traffic Light (Red)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5826589328183899219, guid: 5f087721d8ea4744a895da955b32f4f4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 5826589328183899228, guid: 5f087721d8ea4744a895da955b32f4f4, type: 3}
       propertyPath: m_RootOrder
@@ -2265,6 +2405,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Traffic Sign - 4
       objectReference: {fileID: 0}
+    - target: {fileID: 8012619157609668872, guid: b2d7747c76b421d4599a3159638057cf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 8012619157609668874, guid: b2d7747c76b421d4599a3159638057cf, type: 3}
       propertyPath: m_RootOrder
       value: 36
@@ -2326,6 +2470,10 @@ PrefabInstance:
     - target: {fileID: 7946909027398076989, guid: 3f55315a1779f904fba652457ad20445, type: 3}
       propertyPath: m_Name
       value: Stop Sign
+      objectReference: {fileID: 0}
+    - target: {fileID: 7946909027398076989, guid: 3f55315a1779f904fba652457ad20445, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7946909027398076990, guid: 3f55315a1779f904fba652457ad20445, type: 3}
       propertyPath: m_RootOrder
@@ -2389,6 +2537,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Garbage - 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7739546310464984670, guid: 2dce8b96a0d6f26459ada405664a7627, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 7739546310464984671, guid: 2dce8b96a0d6f26459ada405664a7627, type: 3}
       propertyPath: m_RootOrder
       value: 21
@@ -2450,6 +2602,10 @@ PrefabInstance:
     - target: {fileID: 7761293132848752006, guid: da734b9ef2d6f004f9a6694a876088e9, type: 3}
       propertyPath: m_Name
       value: Mail Post Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 7761293132848752006, guid: da734b9ef2d6f004f9a6694a876088e9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7761293132848752009, guid: da734b9ef2d6f004f9a6694a876088e9, type: 3}
       propertyPath: m_RootOrder
@@ -2557,6 +2713,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hotdog Stand
       objectReference: {fileID: 0}
+    - target: {fileID: 7644658632360058174, guid: 012daa4e42a7c124ea9d068ac7e463c1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 012daa4e42a7c124ea9d068ac7e463c1, type: 3}
 --- !u!4 &1105432934013922344 stripped
@@ -2619,6 +2779,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Traffic Wires
       objectReference: {fileID: 0}
+    - target: {fileID: 7701092686036860316, guid: a64dcc3cc41d1f14a8adc9423bc5e0f3, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a64dcc3cc41d1f14a8adc9423bc5e0f3, type: 3}
 --- !u!4 &1105432934218211680 stripped
@@ -2636,6 +2800,10 @@ PrefabInstance:
     - target: {fileID: 7682021575049797457, guid: 71c27e1d0ab12bb43acfccd7cd9c24e0, type: 3}
       propertyPath: m_Name
       value: Garbage Big Open
+      objectReference: {fileID: 0}
+    - target: {fileID: 7682021575049797457, guid: 71c27e1d0ab12bb43acfccd7cd9c24e0, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7682021575049797463, guid: 71c27e1d0ab12bb43acfccd7cd9c24e0, type: 3}
       propertyPath: m_RootOrder
@@ -2698,6 +2866,10 @@ PrefabInstance:
     - target: {fileID: 7675249370386233188, guid: fcfc7bf2f18e5014c94d3544704e50d8, type: 3}
       propertyPath: m_Name
       value: Window Big Broken
+      objectReference: {fileID: 0}
+    - target: {fileID: 7675249370386233188, guid: fcfc7bf2f18e5014c94d3544704e50d8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7675249370386233189, guid: fcfc7bf2f18e5014c94d3544704e50d8, type: 3}
       propertyPath: m_RootOrder
@@ -2805,6 +2977,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bus Stop
       objectReference: {fileID: 0}
+    - target: {fileID: 7509677136564733617, guid: 4cc8dd2b3afc6d94494e76c477113df8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4cc8dd2b3afc6d94494e76c477113df8, type: 3}
 --- !u!4 &1105432933959885661 stripped
@@ -2867,6 +3043,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Window Big
       objectReference: {fileID: 0}
+    - target: {fileID: 7546681335951312582, guid: f308e4c151534e34b899d7884afd1951, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f308e4c151534e34b899d7884afd1951, type: 3}
 --- !u!4 &1105432935603992430 stripped
@@ -2884,6 +3064,10 @@ PrefabInstance:
     - target: {fileID: 7291141916939853809, guid: 4309031eed33125469dec66cd63951d1, type: 3}
       propertyPath: m_Name
       value: Mail Post
+      objectReference: {fileID: 0}
+    - target: {fileID: 7291141916939853809, guid: 4309031eed33125469dec66cd63951d1, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7291141916939853814, guid: 4309031eed33125469dec66cd63951d1, type: 3}
       propertyPath: m_RootOrder
@@ -2946,6 +3130,10 @@ PrefabInstance:
     - target: {fileID: 7338040355110047170, guid: 17742a4ea343e8242965bfe365e8b7c7, type: 3}
       propertyPath: m_Name
       value: Fallen Barrel
+      objectReference: {fileID: 0}
+    - target: {fileID: 7338040355110047170, guid: 17742a4ea343e8242965bfe365e8b7c7, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 7338040355110047171, guid: 17742a4ea343e8242965bfe365e8b7c7, type: 3}
       propertyPath: m_RootOrder
@@ -3053,6 +3241,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fence - 3
       objectReference: {fileID: 0}
+    - target: {fileID: 7138526255559420929, guid: 7dc36c012237c43428e94570ad3a27b5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dc36c012237c43428e94570ad3a27b5, type: 3}
 --- !u!4 &1105432935345861821 stripped
@@ -3115,6 +3307,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Pizza BillBoard
       objectReference: {fileID: 0}
+    - target: {fileID: 7201207939093806902, guid: a97bcab7b11357c49b2748fd802fcdff, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a97bcab7b11357c49b2748fd802fcdff, type: 3}
 --- !u!4 &1105432935072869288 stripped
@@ -3132,6 +3328,10 @@ PrefabInstance:
     - target: {fileID: 6940521419785575952, guid: c87bf041db45af146a45b2e4b369a4cf, type: 3}
       propertyPath: m_Name
       value: Fence - 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6940521419785575952, guid: c87bf041db45af146a45b2e4b369a4cf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 6940521419785575953, guid: c87bf041db45af146a45b2e4b369a4cf, type: 3}
       propertyPath: m_RootOrder
@@ -3239,6 +3439,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Traffic Sign - 5
       objectReference: {fileID: 0}
+    - target: {fileID: 8895070254744064066, guid: 0f2e006dce96038459ac85b28434e9f5, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f2e006dce96038459ac85b28434e9f5, type: 3}
 --- !u!4 &1105432935305001366 stripped
@@ -3301,6 +3505,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hotel Sign - 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8795565210471491470, guid: 57ee3ceaae3be0748840dadeaef7f4cf, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57ee3ceaae3be0748840dadeaef7f4cf, type: 3}
 --- !u!4 &1105432935912002653 stripped
@@ -3318,6 +3526,10 @@ PrefabInstance:
     - target: {fileID: 8784907782850374232, guid: eb9ec2e868bea2f4e8558841d4f9dc7e, type: 3}
       propertyPath: m_Name
       value: Fence - 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8784907782850374232, guid: eb9ec2e868bea2f4e8558841d4f9dc7e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8784907782850374233, guid: eb9ec2e868bea2f4e8558841d4f9dc7e, type: 3}
       propertyPath: m_RootOrder
@@ -3380,6 +3592,10 @@ PrefabInstance:
     - target: {fileID: 8567816806589474214, guid: aa9a7d18992235c4e927733f76eead91, type: 3}
       propertyPath: m_Name
       value: Traffic Light (Off)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567816806589474214, guid: aa9a7d18992235c4e927733f76eead91, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
       objectReference: {fileID: 0}
     - target: {fileID: 8567816806589474215, guid: aa9a7d18992235c4e927733f76eead91, type: 3}
       propertyPath: m_RootOrder

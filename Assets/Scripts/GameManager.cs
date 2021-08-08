@@ -34,20 +34,18 @@ public class GameManager : MonoBehaviour
 
     [Header("Popup Canvases Transitions")] // delete later
     [SerializeField] float timeScaleToZeroDelay = 1.1f;
-    [SerializeField] Animator winAnimator;
-    [SerializeField] Animator loseAnimator;
+    // [SerializeField] Animator winAnimator;
+    // [SerializeField] Animator loseAnimator;
      
     
     // Cache
     Enemy[] _enemies;
     CatHandler _catHandler;
-    SceneController _sceneController;
     LevelSelection _levelSelection;
     int _currentSceneIndex;
 
     private void OnEnable()
     {
-        _sceneController = FindObjectOfType<SceneController>();
         _levelSelection = FindObjectOfType<LevelSelection>();
         
         _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
@@ -135,12 +133,6 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    // This method will be used to set Timescale to 0 at the end popup canvases transitions, in the ANIMATOR
-    IEnumerator SetTimeScaleToZero()
-    {
-        yield return new WaitForSeconds(timeScaleToZeroDelay);
-        Time.timeScale = 0;
-    }
     
     IEnumerator LoseCondition()
     {
@@ -148,16 +140,19 @@ public class GameManager : MonoBehaviour
         {
             yield return new WaitForSeconds(looseScreenCountDown);
             Debug.Log("YOU LOOOOSEE");
-            Time.timeScale = 0;
             looseCanvas.SetActive(true);
+            StartCoroutine(SetTimeScaleToZero());
         }
     }
     
-    public void ScoreUpdate(int scoreValue)
+    
+    // This method will be used to set Timescale to 0 at the end popup canvases transitions, in the ANIMATOR
+    IEnumerator SetTimeScaleToZero()
     {
-        startingScore += scoreValue;
-        scoreText.text = startingScore.ToString();
+        yield return new WaitForSeconds(timeScaleToZeroDelay);
+        Time.timeScale = 0;
     }
+    
     
     public void PauseGame()
     {
@@ -165,10 +160,17 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 0;
     }
     
+    
     public void ContinueGame()
     {
         pauseCanvas.SetActive(false);
         Time.timeScale = 1;
     }
     
+    
+    // public void ScoreUpdate(int scoreValue)
+    // {
+    //     startingScore += scoreValue;
+    //     scoreText.text = startingScore.ToString();
+    // }
 }

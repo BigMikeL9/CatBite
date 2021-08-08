@@ -190,12 +190,12 @@ AudioSource:
   m_GameObject: {fileID: 2370481806372036092}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: af239c797055cf54a9845fbd1db1a111, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 1
+  Loop: 0
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -298,6 +298,6 @@ MonoBehaviour:
   destroyDelay: 0.3
   leftBoxCollider: {fileID: 0}
   rightBoxCollider: {fileID: 0}
-  idleSFX: {fileID: 0}
-  hitSFX: {fileID: 0}
-  chickenSFXVolume: 0
+  idleSFX: {fileID: 8300000, guid: f7c4b24c392efb94bb9eb0ca294c18fc, type: 3}
+  hitSFX: {fileID: 8300000, guid: 171e68e117bbe3a439fa7cf4bde7d783, type: 3}
+  chickenSFXVolume: 0.2
