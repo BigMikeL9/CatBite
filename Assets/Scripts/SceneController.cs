@@ -48,18 +48,20 @@ public class SceneController : MonoBehaviour
     public void LoadNextScene()
     {
         Time.timeScale = 1;
-        StartCoroutine(LoadLevel(_currentSceneIndex + 1));
+        SceneManager.LoadScene(_currentSceneIndex + 1);
+        
+        // StartCoroutine(LoadLevel(_currentSceneIndex + 1));
     }
 
-    IEnumerator LoadLevel(int sceneIndex)
-    {
-        // Play Animation
-        animator.SetTrigger("Start");
-        // Wait 
-        yield return new WaitForSeconds(sceneTransitionTimer);
-        // Load Scene
-        SceneManager.LoadScene(sceneIndex);
-    }
+    // IEnumerator LoadLevel(int sceneIndex)
+    // {
+    //     // Play Animation
+    //     animator.SetTrigger("Start");
+    //     // Wait 
+    //     yield return new WaitForSeconds(sceneTransitionTimer);
+    //     // Load Scene
+    //     SceneManager.LoadScene(sceneIndex);
+    // }
     
     public void LoadMainMenu()
     {
