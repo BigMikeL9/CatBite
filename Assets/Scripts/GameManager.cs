@@ -33,7 +33,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject settingsCanvas;
 
     [Header("Popup Canvases Transitions")] // delete later
-    [SerializeField] float timeScaleToZeroDelay = 1.1f;
+    [SerializeField] float delayToZeroTimeScale = 1.1f;
+    [SerializeField] float delayToOneTimeScale = 1.1f;
     // [SerializeField] Animator winAnimator;
     // [SerializeField] Animator loseAnimator;
      
@@ -43,11 +44,12 @@ public class GameManager : MonoBehaviour
     CatHandler _catHandler;
     LevelSelection _levelSelection;
     int _currentSceneIndex;
+    // public bool isPauseCanvasEnable;
 
     private void OnEnable()
     {
         _levelSelection = FindObjectOfType<LevelSelection>();
-        
+
         _currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
 
         // adds all the enemies in the scene to the "_enemies" array
@@ -69,17 +71,6 @@ public class GameManager : MonoBehaviour
         HeartsSystem();
     }
     
-
-    public void UpdateNumberOfCats()
-    {
-        playerHealth--;
-
-        if (playerHealth <= 0)
-        {
-            _catHandler.spawnCats = false;
-        }
-    }
-    
     
     private void HeartsSystem()
     {
@@ -97,7 +88,18 @@ public class GameManager : MonoBehaviour
         }
     }
     
+    // This method is called in the CatHandler class
+    public void UpdateNumberOfCats()
+    {
+        playerHealth--;
+
+        if (playerHealth <= 0)
+        {
+            _catHandler.spawnCats = false;
+        }
+    }
     
+    // Checks if all enemies are dead in the scene
     private bool AllEnemiesDead() 
     {
         foreach (var enemy in _enemies)
@@ -113,6 +115,7 @@ public class GameManager : MonoBehaviour
         }
         return true;
     }
+    
     
     private void WinCondition()
     {
@@ -136,7 +139,7 @@ public class GameManager : MonoBehaviour
     
     IEnumerator LoseCondition()
     {
-        if (!AllEnemiesDead() && playerHealth <= 0)
+        if (!AllEnemiesDead() && playerHealth <= 0 && winCanvas.activeSelf == false)
         {
             yield return new WaitForSeconds(looseScreenCountDown);
             Debug.Log("YOU LOOOOSEE");
@@ -145,25 +148,31 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    
-    // This method will be used to set Timescale to 0 at the end popup canvases transitions, in the ANIMATOR
-    IEnumerator SetTimeScaleToZero()
-    {
-        yield return new WaitForSeconds(timeScaleToZeroDelay);
-        Time.timeScale = 0;
-    }
-    
-    
     public void PauseGame()
     {
         pauseCanvas.SetActive(true);
-        Time.timeScale = 0;
+        StartCoroutine(SetTimeScaleToZero());
     }
     
     
     public void ContinueGame()
     {
+        Time.timeScale = 1;
         pauseCanvas.SetActive(false);
+    }
+    
+    
+    // This method will set the Timescale to 0 at the end popup canvases transitions, in the ANIMATOR
+    IEnumerator SetTimeScaleToZero()
+    {
+        yield return new WaitForSeconds(delayToZeroTimeScale);
+        Time.timeScale = 0;
+    }
+    
+    // This method will reset the TIMESCALE back to 1
+    IEnumerator SetTimeScaleToOne()
+    {
+        yield return new WaitForSeconds(delayToOneTimeScale);
         Time.timeScale = 1;
     }
     

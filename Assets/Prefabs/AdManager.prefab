@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &6493366099869321890
+--- !u!1 &1153687948815586262
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,56 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 6493366099869321888}
-  - component: {fileID: 6493366099869321891}
+  - component: {fileID: 1153687948815586256}
+  - component: {fileID: 1153687948815586257}
   m_Layer: 0
-  m_Name: Game Manager
+  m_Name: AdManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
-  m_StaticEditorFlags: 4294967295
+  m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &6493366099869321888
+--- !u!4 &1153687948815586256
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6493366099869321890}
+  m_GameObject: {fileID: 1153687948815586262}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.575528, y: -0.35275605, z: 115.15003}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6493366099869321891
+--- !u!114 &1153687948815586257
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6493366099869321890}
+  m_GameObject: {fileID: 1153687948815586262}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a72c057151472524caeb06f6902f80be, type: 3}
+  m_Script: {fileID: 11500000, guid: 43507ae96af597e47bfcb2a7b3dd85fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 3
-  maxNumOfHealth: 3
-  hearts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  looseScreenCountDown: 8
-  scoreText: {fileID: 0}
-  startingScore: 0
-  winCanvas: {fileID: 0}
-  looseCanvas: {fileID: 0}
-  pauseCanvas: {fileID: 0}
-  settingsCanvas: {fileID: 0}
-  delayToZeroTimeScale: 1.1
-  delayToOneTimeScale: 0.8
+  testMode: 1

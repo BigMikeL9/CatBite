@@ -19,7 +19,6 @@ public class LevelSelection : MonoBehaviour
     {
         _nextSceneLoad = SceneManager.GetActiveScene().buildIndex + 1;
         Time.timeScale = 1;
-        Debug.Log("Timescale is: " + Time.timeScale);
     }
 
     private void Update()

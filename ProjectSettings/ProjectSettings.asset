@@ -630,7 +630,7 @@ PlayerSettings:
     Game Performance: 0
     Purchasing: 0
     UDP: 0
-    Unity Ads: 0
+    Unity Ads: 1
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -647,7 +647,7 @@ PlayerSettings:
   cloudProjectId: 49c6e8cb-70d2-4c84-9306-6171571b7128
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: First Mobile Game
+  projectName: CatBite
   organizationId: bigmikel
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0

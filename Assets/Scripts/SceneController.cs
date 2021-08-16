@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SceneController : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class SceneController : MonoBehaviour
     // Configs
     [SerializeField] Animator animator;
     [SerializeField] float sceneTransitionTimer = 1f;
-    
+
     // Cache
     int _currentSceneIndex;
     
@@ -21,27 +22,16 @@ public class SceneController : MonoBehaviour
         Time.timeScale = 1;
     }
     
-    //
-    // private void SetUpSingleton()
-    // {
-    //     var numOfSceneController = FindObjectsOfType(GetType()).Length;
-    //
-    //     if (numOfSceneController > 1)
-    //     {
-    //         gameObject.SetActive(false);
-    //         Destroy(gameObject);
-    //     }
-    //     else
-    //     {
-    //         DontDestroyOnLoad(gameObject);
-    //     }
-    // }
-    
-    
     public void RestartLevel()
     {
         Time.timeScale = 1;
         SceneManager.LoadScene(_currentSceneIndex);
+    }
+    
+    // Plays an Ad when the player restarts a level
+    public void PlayAd()
+    {
+        AdManager.Instance.ShowAd(this);
     }
     
     

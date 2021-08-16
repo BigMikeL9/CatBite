@@ -15,6 +15,7 @@ public class CatHandler : MonoBehaviour
     [SerializeField] float detachBallDelay = 1f;
     [SerializeField] float spawnDelay = 1f;
     [SerializeField] float maxDragDistance = 2f;
+    // [SerializeField] Rect touchBoundaries;
     
 
     // states

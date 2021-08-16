@@ -177,5 +177,10 @@ public class Cat : MonoBehaviour
    {
       _audioSource.PlayOneShot(releaseMeowSFX, meowSFXVolume);
    }
+   
+   // public void PlayJumpAnimation()
+   // {
+   //    _animator.
+   // }
 
 }
