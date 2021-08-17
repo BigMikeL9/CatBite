@@ -289,13 +289,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5da4b844e4bac9d42a7d8fa8d731fcb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minChickenSpeed: 0
-  maxChickenSpeed: 0
-  enemySpeed: 1.5
+  minChickenSpeed: 1
+  maxChickenSpeed: 1.6
   jumpForce: 12
   hitJumpForce: 5
   chickenHealth: 5
   destroyDelay: 0.3
+  chickenKillValue: 50
   leftBoxCollider: {fileID: 0}
   rightBoxCollider: {fileID: 0}
   idleSFX: {fileID: 8300000, guid: f7c4b24c392efb94bb9eb0ca294c18fc, type: 3}

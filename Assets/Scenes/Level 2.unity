@@ -7081,7 +7081,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5571695598805932457, guid: e0c0562cc502bbc41af1aae9a0ddeb6a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.6e-43
+      value: -1.4e-43
       objectReference: {fileID: 0}
     - target: {fileID: 5571695598805932457, guid: e0c0562cc502bbc41af1aae9a0ddeb6a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -21758,6 +21758,10 @@ PrefabInstance:
       value: Game Manager
       objectReference: {fileID: 0}
     - target: {fileID: 6493366099869321891, guid: 368f61d73cd9746408e64c2475c24bfc, type: 3}
+      propertyPath: timerText
+      value: 
+      objectReference: {fileID: 8611139909226468291}
+    - target: {fileID: 6493366099869321891, guid: 368f61d73cd9746408e64c2475c24bfc, type: 3}
       propertyPath: winCanvas
       value: 
       objectReference: {fileID: 2117611538}
@@ -21777,6 +21781,10 @@ PrefabInstance:
       propertyPath: settingsCanvas
       value: 
       objectReference: {fileID: 829572522}
+    - target: {fileID: 6493366099869321891, guid: 368f61d73cd9746408e64c2475c24bfc, type: 3}
+      propertyPath: timerGameObject
+      value: 
+      objectReference: {fileID: 8611139909226468290}
     - target: {fileID: 6493366099869321891, guid: 368f61d73cd9746408e64c2475c24bfc, type: 3}
       propertyPath: hearts.Array.data[0]
       value: 
@@ -22623,7 +22631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3294214411927187800, guid: 6de1fa5613fbd00478c252abd6481654, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -14.005
+      value: -14.005001
       objectReference: {fileID: 0}
     - target: {fileID: 3294214411927187803, guid: 6de1fa5613fbd00478c252abd6481654, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -22655,7 +22663,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3294214411986270989, guid: 6de1fa5613fbd00478c252abd6481654, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -14.005
+      value: -14.005001
       objectReference: {fileID: 0}
     - target: {fileID: 3294214412045105018, guid: 6de1fa5613fbd00478c252abd6481654, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -22731,7 +22739,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3294214412138156599, guid: 6de1fa5613fbd00478c252abd6481654, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -14.005
+      value: -14.005001
       objectReference: {fileID: 0}
     - target: {fileID: 3294214412150900817, guid: 6de1fa5613fbd00478c252abd6481654, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -23933,6 +23941,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 86469281}
+    - target: {fileID: 1321768092, guid: 757c59a37c54bf747b9ccdf7162d514b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1418105063, guid: 757c59a37c54bf747b9ccdf7162d514b, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -88.099976
@@ -24035,3 +24047,19 @@ PrefabInstance:
       objectReference: {fileID: 875682263}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 757c59a37c54bf747b9ccdf7162d514b, type: 3}
+--- !u!1 &8611139909226468290 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1321768092, guid: 757c59a37c54bf747b9ccdf7162d514b, type: 3}
+  m_PrefabInstance: {fileID: 8611139909226468289}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8611139909226468291 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2106586778, guid: 757c59a37c54bf747b9ccdf7162d514b, type: 3}
+  m_PrefabInstance: {fileID: 8611139909226468289}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

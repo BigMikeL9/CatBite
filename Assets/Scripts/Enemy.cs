@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 public class Enemy : MonoBehaviour
@@ -10,11 +11,12 @@ public class Enemy : MonoBehaviour
     [Header("Chicken Configs")]
     [SerializeField] float minChickenSpeed;
     [SerializeField] float maxChickenSpeed;
-    [SerializeField] float enemySpeed = 1.3f;
     [SerializeField] float jumpForce = 10f;
     [SerializeField] int hitJumpForce = 5;
     [SerializeField] int chickenHealth = 2;
     [SerializeField] float destroyDelay= 0.3f;
+    [SerializeField] int chickenKillValue = 15;
+    // [SerializeField] Vector2 deathKickForce = new Vector2(25f, 25f);
 
     [Header("Chicken Boundaries")]
     [SerializeField] GameObject leftBoxCollider;
@@ -29,6 +31,7 @@ public class Enemy : MonoBehaviour
     // States
     bool isGoingLeft;
     bool isGoingRight = true;
+    bool isAlive = true;
     
     // Cache
     Rigidbody2D _rigidbody2D;
@@ -36,8 +39,12 @@ public class Enemy : MonoBehaviour
     CircleCollider2D _jumpDetectionCollider;
     Cat _cat;
     Camera _camera;
-    private AudioSource _audioSource;
+    AudioSource _audioSource;
+    GameManager _gameManager;
+    float _enemySpeed;
 
+    
+    
     private void Start()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -46,28 +53,33 @@ public class Enemy : MonoBehaviour
         _audioSource = GetComponent<AudioSource>();
 
         _cat = FindObjectOfType<Cat>();
+        _gameManager = FindObjectOfType<GameManager>();
+        
         _camera = Camera.main;
         
+        _enemySpeed = Random.Range(minChickenSpeed, maxChickenSpeed);
         // _audioSource.PlayOneShot(idleSFX, chickenSFXVolume);
     }
 
     private void FixedUpdate()
     {
+        if (!isAlive) { return; }
+        
         EnemyMove();
         JumpOverObstacle();
     }
 
     private void Update()
     {
+        if (!isAlive) { return; }
+        
         FlipSprite();
         Die();
     }
     
     private void EnemyMove()
     {
-        // Maybe randomize speed later *****
-        
-        _rigidbody2D.velocity = new Vector2(enemySpeed, _rigidbody2D.velocity.y);
+        _rigidbody2D.velocity = new Vector2(_enemySpeed, _rigidbody2D.velocity.y);
     }
     
     
@@ -95,7 +107,8 @@ public class Enemy : MonoBehaviour
     public void TakeDamage(int damageAmount)
     {
         chickenHealth -= damageAmount;
-        enemySpeed = -enemySpeed;
+        _enemySpeed = -_enemySpeed;
+        
         // chicken jump on hit
         _rigidbody2D.velocity += new Vector2(0f, hitJumpForce);
         AudioSource.PlayClipAtPoint(hitSFX, _camera.transform.position, chickenSFXVolume);
@@ -106,6 +119,11 @@ public class Enemy : MonoBehaviour
     {
         if (chickenHealth <= 0)
         {
+            isAlive = false;
+            _gameManager.ScoreUpdate(chickenKillValue);
+            // var deathKickDirection = new Vector2(Mathf.Sign(-_rigidbody2D.velocity.x), Mathf.Sign(- _rigidbody2D.velocity.y));
+            // _rigidbody2D.velocity = deathKickDirection * deathKickForce; 
+            // transform.Rotate(0, 0, Random.Range(45, 90));
             Destroy(gameObject, destroyDelay);
         }
     }
@@ -119,13 +137,13 @@ public class Enemy : MonoBehaviour
         {
             isGoingLeft = false;
             isGoingRight = true;
-            enemySpeed = Mathf.Abs(enemySpeed); // Controls the chicken move direction
+            _enemySpeed = Mathf.Abs(_enemySpeed); // Controls the chicken move direction
         }
         else if (otherObject == rightBoxCollider)
         {
             isGoingLeft = true;
             isGoingRight = false;
-            enemySpeed = -enemySpeed; // Controls the chicken move direction
+            _enemySpeed = -_enemySpeed; // Controls the chicken move direction
         }
     }
 }

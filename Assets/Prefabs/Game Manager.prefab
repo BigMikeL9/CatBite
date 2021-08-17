@@ -53,8 +53,12 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   looseScreenCountDown: 8
+  score: 0
   scoreText: {fileID: 0}
-  startingScore: 0
+  winPopupScoreText: {fileID: 0}
+  scoreUpdateSpeed: 0.1
+  timerText: {fileID: 0}
+  timerGameObject: {fileID: 0}
   winCanvas: {fileID: 0}
   looseCanvas: {fileID: 0}
   pauseCanvas: {fileID: 0}

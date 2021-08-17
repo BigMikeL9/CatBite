@@ -20,11 +20,19 @@ public class GameManager : MonoBehaviour
     [SerializeField] Image[] hearts;
     
     [Header("Level System")]
-    [SerializeField] float looseScreenCountDown = 3f;
+    [SerializeField] float looseScreenCountDown = 3;
 
     [Header("Score System")] 
-    [SerializeField] TextMeshProUGUI scoreText;
-    [SerializeField] int startingScore;
+    [Tooltip("This is the Starting score value")]
+    [SerializeField] int score = 0;
+    // [SerializeField] TextMeshProUGUI scoreText;
+    [SerializeField] TextMeshProUGUI winPopupScoreText;
+    [SerializeField] float scoreUpdateSpeed = 0.3f;
+    
+
+    [Header("Timer")] 
+    [SerializeField] TextMeshProUGUI timerText;
+    [SerializeField] GameObject timerGameObject;
 
     [Header("Popup Canvases")] 
     [SerializeField] GameObject winCanvas;
@@ -44,6 +52,8 @@ public class GameManager : MonoBehaviour
     CatHandler _catHandler;
     LevelSelection _levelSelection;
     int _currentSceneIndex;
+    float _secondsLeft;
+    float _displayScore = 0;
     // public bool isPauseCanvasEnable;
 
     private void OnEnable()
@@ -61,14 +71,19 @@ public class GameManager : MonoBehaviour
     {
         _catHandler = FindObjectOfType<CatHandler>();
         
-        // scoreText.text = startingScore.ToString();
+        // scoreText.text = score.ToString();
+        StartCoroutine(IncrementalScoreUpdate());
+
+        timerText.text = _secondsLeft.ToString();
+        _secondsLeft = looseScreenCountDown;
     }
 
     private void Update()
     {
         WinCondition();
-        StartCoroutine(LoseCondition());
         HeartsSystem();
+        
+        StartCoroutine(LoseCondition());
     }
     
     
@@ -131,7 +146,8 @@ public class GameManager : MonoBehaviour
                 Debug.Log("You Won the level!!");
                 _levelSelection.UpdateCurrentLevelPlayerPref();
                 winCanvas.SetActive(true);
-                StartCoroutine(SetTimeScaleToZero());
+                // StartCoroutine(SetTimeScaleToZeroCoroutine());
+                SetTimeScaleToZero();
             }
         }
     }
@@ -141,17 +157,35 @@ public class GameManager : MonoBehaviour
     {
         if (!AllEnemiesDead() && playerHealth <= 0 && winCanvas.activeSelf == false)
         {
+            LoseCountDownStart();
             yield return new WaitForSeconds(looseScreenCountDown);
             Debug.Log("YOU LOOOOSEE");
             looseCanvas.SetActive(true);
-            StartCoroutine(SetTimeScaleToZero());
+            StartCoroutine(SetTimeScaleToZeroCoroutine());
         }
     }
-    
+
+    private void LoseCountDownStart()
+    {
+        if (looseScreenCountDown >= 0)
+        {
+            timerGameObject.SetActive(true);
+            
+            looseScreenCountDown -= Time.deltaTime;
+            _secondsLeft = Mathf.FloorToInt((looseScreenCountDown));
+            Debug.Log(_secondsLeft);
+
+            if (_secondsLeft >= 0)
+            {
+                timerText.text = _secondsLeft.ToString();
+            }
+        }
+    }
+
     public void PauseGame()
     {
         pauseCanvas.SetActive(true);
-        StartCoroutine(SetTimeScaleToZero());
+        StartCoroutine(SetTimeScaleToZeroCoroutine());
     }
     
     
@@ -163,10 +197,20 @@ public class GameManager : MonoBehaviour
     
     
     // This method will set the Timescale to 0 at the end popup canvases transitions, in the ANIMATOR
-    IEnumerator SetTimeScaleToZero()
+    IEnumerator SetTimeScaleToZeroCoroutine()
     {
         yield return new WaitForSeconds(delayToZeroTimeScale);
         Time.timeScale = 0;
+    }
+
+    // Sets the timescale to 0, when all the score is added incrementally to the win screen
+    private void SetTimeScaleToZero()
+    {
+        if (winPopupScoreText.text == score.ToString())
+        {
+            Debug.Log("Set timescale to 0 NOWWWWWW");
+            Time.timeScale = 0;
+        }
     }
     
     // This method will reset the TIMESCALE back to 1
@@ -176,10 +220,25 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
     }
     
-    
-    // public void ScoreUpdate(int scoreValue)
-    // {
-    //     startingScore += scoreValue;
-    //     scoreText.text = startingScore.ToString();
-    // }
+    public void ScoreUpdate(int scoreValue)
+    {
+        score += scoreValue;
+        
+    }
+
+    // Updates the score by increments of 1
+    IEnumerator IncrementalScoreUpdate()
+    {
+        while (true)
+        {
+            if (_displayScore < score)
+            {
+                _displayScore++; // updates by 1
+                // scoreText.text = _displayScore.ToString();
+                winPopupScoreText.text = _displayScore.ToString();
+            }
+
+            yield return new WaitForSeconds(scoreUpdateSpeed); // decrease the argument to make the score update faster.
+        }
+    }
 }
