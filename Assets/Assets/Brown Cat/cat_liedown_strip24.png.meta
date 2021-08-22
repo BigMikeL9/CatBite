@@ -104,7 +104,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -118,7 +118,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 124
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -139,7 +139,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -151,7 +151,7 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -163,7 +163,7 @@ TextureImporter:
     buildTarget: iPhone
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -175,7 +175,7 @@ TextureImporter:
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -187,7 +187,7 @@ TextureImporter:
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -202,10 +202,10 @@ TextureImporter:
       name: cat_liedown_strip24_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 240
-        height: 110
+        x: 32
+        y: 32
+        width: 121
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -223,10 +223,10 @@ TextureImporter:
       name: cat_liedown_strip24_1
       rect:
         serializedVersion: 2
-        x: 240
-        y: 0
-        width: 240
-        height: 110
+        x: 232
+        y: 32
+        width: 121
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -244,10 +244,10 @@ TextureImporter:
       name: cat_liedown_strip24_2
       rect:
         serializedVersion: 2
-        x: 480
-        y: 0
-        width: 240
-        height: 110
+        x: 432
+        y: 32
+        width: 120
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,10 +265,10 @@ TextureImporter:
       name: cat_liedown_strip24_3
       rect:
         serializedVersion: 2
-        x: 720
-        y: 0
-        width: 240
-        height: 110
+        x: 641
+        y: 32
+        width: 112
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -286,10 +286,10 @@ TextureImporter:
       name: cat_liedown_strip24_4
       rect:
         serializedVersion: 2
-        x: 960
-        y: 0
-        width: 240
-        height: 110
+        x: 843
+        y: 32
+        width: 110
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -307,10 +307,10 @@ TextureImporter:
       name: cat_liedown_strip24_5
       rect:
         serializedVersion: 2
-        x: 1200
-        y: 0
-        width: 240
-        height: 110
+        x: 1032
+        y: 32
+        width: 120
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,10 +328,10 @@ TextureImporter:
       name: cat_liedown_strip24_6
       rect:
         serializedVersion: 2
-        x: 1440
-        y: 0
-        width: 240
-        height: 110
+        x: 1227
+        y: 32
+        width: 126
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -349,10 +349,10 @@ TextureImporter:
       name: cat_liedown_strip24_7
       rect:
         serializedVersion: 2
-        x: 1680
-        y: 0
-        width: 240
-        height: 110
+        x: 1426
+        y: 32
+        width: 127
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -370,10 +370,10 @@ TextureImporter:
       name: cat_liedown_strip24_8
       rect:
         serializedVersion: 2
-        x: 1920
-        y: 0
-        width: 240
-        height: 110
+        x: 1628
+        y: 32
+        width: 124
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -391,10 +391,10 @@ TextureImporter:
       name: cat_liedown_strip24_9
       rect:
         serializedVersion: 2
-        x: 2160
-        y: 0
-        width: 240
-        height: 110
+        x: 1827
+        y: 32
+        width: 126
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -412,10 +412,10 @@ TextureImporter:
       name: cat_liedown_strip24_10
       rect:
         serializedVersion: 2
-        x: 2400
-        y: 0
-        width: 240
-        height: 110
+        x: 2026
+        y: 32
+        width: 127
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -433,10 +433,10 @@ TextureImporter:
       name: cat_liedown_strip24_11
       rect:
         serializedVersion: 2
-        x: 2640
-        y: 0
-        width: 240
-        height: 110
+        x: 2228
+        y: 32
+        width: 124
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -454,10 +454,10 @@ TextureImporter:
       name: cat_liedown_strip24_12
       rect:
         serializedVersion: 2
-        x: 2880
-        y: 0
-        width: 240
-        height: 110
+        x: 2427
+        y: 32
+        width: 126
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -475,10 +475,10 @@ TextureImporter:
       name: cat_liedown_strip24_13
       rect:
         serializedVersion: 2
-        x: 3120
-        y: 0
-        width: 240
-        height: 110
+        x: 2626
+        y: 32
+        width: 127
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -496,10 +496,10 @@ TextureImporter:
       name: cat_liedown_strip24_14
       rect:
         serializedVersion: 2
-        x: 3360
-        y: 0
-        width: 240
-        height: 110
+        x: 2828
+        y: 32
+        width: 124
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -517,10 +517,10 @@ TextureImporter:
       name: cat_liedown_strip24_15
       rect:
         serializedVersion: 2
-        x: 3600
-        y: 0
-        width: 240
-        height: 110
+        x: 3027
+        y: 32
+        width: 126
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -538,10 +538,10 @@ TextureImporter:
       name: cat_liedown_strip24_16
       rect:
         serializedVersion: 2
-        x: 3840
-        y: 0
-        width: 240
-        height: 110
+        x: 3226
+        y: 32
+        width: 127
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -559,10 +559,10 @@ TextureImporter:
       name: cat_liedown_strip24_17
       rect:
         serializedVersion: 2
-        x: 4080
-        y: 0
-        width: 240
-        height: 110
+        x: 3428
+        y: 32
+        width: 124
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -580,10 +580,10 @@ TextureImporter:
       name: cat_liedown_strip24_18
       rect:
         serializedVersion: 2
-        x: 4320
-        y: 0
-        width: 240
-        height: 110
+        x: 3627
+        y: 32
+        width: 126
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -601,10 +601,10 @@ TextureImporter:
       name: cat_liedown_strip24_19
       rect:
         serializedVersion: 2
-        x: 4560
-        y: 0
-        width: 240
-        height: 110
+        x: 3826
+        y: 32
+        width: 127
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -622,10 +622,10 @@ TextureImporter:
       name: cat_liedown_strip24_20
       rect:
         serializedVersion: 2
-        x: 4800
-        y: 0
-        width: 240
-        height: 110
+        x: 4028
+        y: 32
+        width: 124
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -643,10 +643,10 @@ TextureImporter:
       name: cat_liedown_strip24_21
       rect:
         serializedVersion: 2
-        x: 5040
-        y: 0
-        width: 240
-        height: 110
+        x: 4227
+        y: 32
+        width: 126
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -664,10 +664,10 @@ TextureImporter:
       name: cat_liedown_strip24_22
       rect:
         serializedVersion: 2
-        x: 5280
-        y: 0
-        width: 240
-        height: 110
+        x: 4426
+        y: 32
+        width: 127
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -685,10 +685,10 @@ TextureImporter:
       name: cat_liedown_strip24_23
       rect:
         serializedVersion: 2
-        x: 5520
-        y: 0
-        width: 240
-        height: 110
+        x: 4628
+        y: 32
+        width: 124
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}

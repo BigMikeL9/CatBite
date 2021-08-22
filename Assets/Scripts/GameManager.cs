@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
     int _currentSceneIndex;
     float _secondsLeft;
     float _displayScore = 0;
-    // public bool isPauseCanvasEnable;
+
 
     private void OnEnable()
     {
@@ -196,7 +196,7 @@ public class GameManager : MonoBehaviour
     }
     
     
-    // This method will set the Timescale to 0 at the end popup canvases transitions, in the ANIMATOR
+    // This method will set the Timescale to 0 at the end of popup transitions, in the ANIMATOR
     IEnumerator SetTimeScaleToZeroCoroutine()
     {
         yield return new WaitForSeconds(delayToZeroTimeScale);

@@ -26,7 +26,7 @@ public class LevelSelection : MonoBehaviour
         LevelSelectionSystem();
     }
 
-    // Makes buttons interactable, depending on what level we are in.
+    // Makes buttons interactable, depending on what level we reached.
     private void LevelSelectionSystem()
     {
         // Change the int value to whatever your level selection build index is on your build settings 
@@ -34,7 +34,6 @@ public class LevelSelection : MonoBehaviour
         
         for (int i = 0; i < levelButtons.Length; i++) 
         {
-            // if 
             if (i + 2 > levelAt) 
             {
                 levelButtons[i].interactable = false;
